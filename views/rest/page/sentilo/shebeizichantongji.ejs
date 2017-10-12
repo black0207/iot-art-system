@@ -1,0 +1,309 @@
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="中电科物联网开放平台"/>
+    <meta name="description" content="中电科物联网开放平台"/>
+    <title>中电科物联网开放平台-资产统计-设备资产统计</title>
+    <link rel="shortcut icon" href="../../../assets/img/sentilo/favicon.ico">
+    <link href="../../../assets/common/css/reset.css" rel="stylesheet" type="text/css"/>
+    <link href="../../../assets/css/sentilo/index.css" rel="stylesheet" type="text/css"/>
+    <!--让IE6、IE7、IE8支持html5和css3开始-->
+    <!--[if lt IE 9]>
+    <script src="../../../assets/common/js/html5.js" type="text/javascript" language="javascript"></script>
+    <script src="../../../assets/common/js/selectivizr.js" type="text/javascript" language="javascript"></script>
+    <script src="../../../assets/common/js/PIE.js" type="text/javascript" language="javascript"></script>
+    <![endif]-->
+    <!--让IE6、IE7、IE8支持html5和css3结束-->
+    <!--IE6支持png图片透明开始-->
+    <!--[if IE 6]>
+    <script src="../../../assets/common/js/DD_belatedPNG.js" mce_src="DD_belatedPNG.js" type="text/javascript"></script>
+
+    <![endif]-->
+    <!--IE6支持png图片透明结束-->
+    <script src="../../../assets/common/js/jquery-1.9.1.min.js" type="text/javascript" language="javascript"></script>
+    <script src="../../../assets/common/js/echarts.min.js" type="text/javascript" language="javascript"></script>
+    <script src="../../../assets/scripts/sentilo/jquery.SuperSlide.2.1.1.js" type="text/javascript" language="javascript"></script>
+    <!--jquery-ui开始-->
+    <link href="../../../assets/common/jquery-ui/css/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css"/>
+    <script src="../../../assets/common/jquery-ui/js/jquery-ui-1.8.16.custom.min.js" type="text/javascript" language="javascript"></script>
+    <!--jquery-ui结束-->
+
+
+
+    <link rel='stylesheet' href='/stylesheets/style.css' /> 
+</head>
+<body>
+<!--页面开始-->
+<div class="page">
+    <% include ../../../common/header %>
+
+    <div class="sbzctj">
+        <div class="sbzctj_a">
+            <div class="sbzctj_a_left">
+                <div class="sbzctj_a_left_a">
+
+                        <div class="kqzl_a">
+                            <ul>
+                                <li id="kqzl_a_a">当前位置：</li>
+                                <li><a href="shebeizichantongji.html#%23%23%23" title="生态环境">资产中心</a></li>
+                                <li>></li>
+                                <li><a href="shebeizichantongji.html#%23%23%23" title="空气质量">设备资产</a></li>
+                            </ul>
+                        </div>
+                </div>
+                <div class="sbzctj_a_left_b">
+                    <div class="sbzctj_a_left_b_a">接入设备数量</div>
+                    <div class="sbzctj_a_left_b_b">287</div>
+                </div>
+            </div>
+            <div class="sbzctj_a_middle">
+                <div class="sbzctj_a_middle_a">
+                    设备类型数量分布
+                </div>
+                <div class="sbzctj_a_middle_b" id="sblxslfb">
+                    <script src="../../../assets/scripts/sentilo/sblxslfb.js" type="text/javascript" language="javascript"></script>
+                </div>
+            </div>
+            <div class="sbzctj_a_right">
+                <div class="sbzctj_a_right_a">
+                    协议类型数量分布
+                </div>
+                <div class="sbzctj_a_right_b" id="xylxslfb">
+                    <script src="../../../assets/scripts/sentilo/xylxslfb.js" type="text/javascript" language="javascript"></script>
+                </div>
+            </div>
+        </div>
+        <div class="sbzctj_b">
+            <div class="sbzctj_b_a">
+                近一个月接入设备状况
+            </div>
+            <div class="sbzctj_b_b" id="jygyjrsbzk">
+                <script src="../../../assets/scripts/sentilo/jygyjrsbzk.js" type="text/javascript" language="javascript"></script>
+            </div>
+        </div>
+        <div class="sbzctj_c">
+            <div class="sbzctj_c_a">
+                <div class="sbzctj_c_a_right">
+                    <ul>
+                       <!--  <li class="sbzctj_c_a_right_ayh"><a  title="按用户">按用户</a></li> -->
+                        <li class="sbzctj_c_a_right_azzs"><a  title="制造商">制造商</a></li>
+                    </ul>
+                </div>
+                <div class="sbzctj_c_a_left">
+                    接入设备统计
+                </div>
+            </div>
+            <div class="sbzctj_c_ayh" id="ayh" style="display:none ;">
+                <script src="../../../assets/scripts/sentilo/ayh.js" type="text/javascript" language="javascript"></script>
+            </div>
+            <div class="sbzctj_c_azzs" id="azzs" style="display:block ;">
+                <script src="../../../assets/scripts/sentilo/azzs.js" type="text/javascript" language="javascript"></script>
+            </div>
+
+
+        </div>
+        <div class="sbzctj_d">
+            <div class="sbzctj_d_a">
+                <div class="sbzctj_d_a_a">
+                    <ul>
+                        <!-- <li class="sbzctj_d_a_a_ayhck"><a  title="按已接入设备">按时间</a></li> -->
+                        <li class="sbzctj_d_a_a_azzsck"><a  title="按制造商">按制造商</a></li>
+                    </ul>
+                </div>
+                <div class="sjzctj_a_right_a_right">
+                    <dl>
+                        <dt id="sjzctj_a_right_a_right_b">已接入设备故障率</dt>
+                        <!-- <dt class="nian">
+                        <div class="nian_a">
+                            <div class="nian_a_left">
+                                2016年
+                            </div>
+                            <div class="nian_a_right">
+                                <a title=""><img src="../../../assets/img/sentilo/yxjk_b.png"/><img src="../../../assets/img/sentilo/yxjk_a.png" style=" display:none;"/></a>
+                            </div>
+                        </div>
+                        <div class="nian_b" style="display:none;">
+                            <ul>
+                                <li><a title="">2016年</a></li>
+                                <li><a title="">2015年</a></li>
+                                
+                            </ul>
+                        </div>
+                        </dt> -->
+                      <!--   <dt class="yue">
+                      <div class="yue_a">
+                          <div class="yue_a_left">
+                              <script type="text/javascript">$('.yue_a_left').html((new Date).getMonth()+'月')</script>
+                          </div>
+                          <div class="yue_a_right">
+                              <a title=""><img src="../../../assets/img/sentilo/yxjk_b.png"/><img src="../../../assets/img/sentilo/yxjk_a.png" style=" display:none;"/></a>
+                          </div>
+                      </div>
+                      <div class="yue_b" style="display:none;">
+                          <ul>
+                              <li><a title="">12月</a></li>
+                              <li><a title="">11月</a></li>
+                              <li><a title="">10月</a></li>
+                              <li><a title="">9月</a></li>
+                              <li><a title="">8月</a></li>
+                              <li><a title="">7月</a></li>
+                              <li><a title="">6月</a></li>
+                              <li><a title="">5月</a></li>
+                              <li><a title="">4月</a></li>
+                              <li><a title="">3月</a></li>
+                              <li><a title="">2月</a></li>
+                              <li><a title="">1月</a></li>
+                          </ul>
+                      </div>
+                      </dt> -->
+                    </dl>
+                </div>
+            </div>
+            <div class="sbzctj_d_ayhck" id="ayhck" style="display:none;">
+                <script src="../../../assets/scripts/sentilo/ayhck.js" type="text/javascript" language="javascript"></script>
+            </div>
+            <div class="sbzctj_d_azzsck" id="azzsck" style="display:block;">
+                <script src="../../../assets/scripts/sentilo/azzsck.js" type="text/javascript" language="javascript"></script>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!--页面结束-->
+<script type="text/javascript" language="javascript">
+    $(".zctj_left_top_a").mouseover(function(){
+        $(".zctj_left_top_b").show();
+        $(".zctj_left_top_a_right>a>img").toggle();
+    });
+    $(".zctj_left_top_a").mouseout(function(){
+        $(".zctj_left_top_b").hide();
+        $(".zctj_left_top_a_right>a>img").toggle();
+    });
+    $(".zctj_left_top_b").mouseover(function(){
+        $(this).show();
+    });
+    $(".zctj_left_top_b").mouseout(function(){
+        $(this).hide();
+    });
+
+    for(var i = 0;i<$('.yue_b').children().children().length;i++){
+        if($('.yue_b').children().children().eq(i).children().html().split('月')[0] == ((new Date()).getMonth())+''){
+            $('.yue_b').children().children().eq(i).css({backgroundColor:'rgb(41,52,68)'});
+        }
+    }
+
+
+
+//    var titleNian = ['2016年','2015年','2014年'];
+//    $(".nian_a").mouseover(function(){
+//        $(".nian_b").show();
+//        $(".nian_a_right>a>img").toggle();
+//    });
+//    $(".nian_a").mouseout(function(){
+//        $(".nian_b").hide();
+//        $(".nian_a_right>a>img").toggle();
+//    });
+//    $(".nian_b").mouseover(function(){
+//        $(this).show();
+//    });
+//    $(".nian_b").mouseout(function(){
+//        $(this).hide();
+//    });
+//
+//    $('.nian_b').children().children().click(function(){
+//        $(this).css({
+//            backgroundColor:'rgb(41,52,68)'
+//        });
+//
+//        $(this).siblings().css({
+//            backgroundColor:'rgba(0,0,0,0)'
+//        });
+//
+//        $('.nian_a').children().first().html(titleNian[$(this).prevAll().length]);
+//        $(".nian_b").hide();
+//
+//    });
+//
+//
+//
+//
+//
+//    $(".yue_a").mouseover(function(){
+//        $(".yue_b").show();
+//        $(".yue_a_right>a>img").toggle();
+//    });
+//    $(".yue_a").mouseout(function(){
+//        $(".yue_b").hide();
+//        $(".yue_a_right>a>img").toggle();
+//    });
+//    $(".yue_b").mouseover(function(){
+//        $(this).show();
+//    });
+//    $(".yue_b").mouseout(function(){
+//        $(this).hide();
+//    });
+//    var titleYue = ['月','12月','11月','10月','9月','8月','7月','6月','5月','4月','3月','2月','1月'];
+//    $('.yue_b').children().children().click(function(){
+//        $(this).css({
+//            backgroundColor:'rgb(41,52,68)'
+//        });
+//
+//        $(this).siblings().css({
+//            backgroundColor:'rgba(0,0,0,0)'
+//        });
+//
+//        $('.yue_a').children().first().html([titleYue[$(this).prevAll().length]]);
+//        $(".yue_b").hide();
+//
+//    });
+//
+//
+//
+//
+//
+//
+//    $(".sbzctj_c_a_right_ayh").mouseover(function(){
+//        $(".sbzctj_c_ayh").show();
+//        $(".sbzctj_c_azzs").hide();
+//    });
+//    $(".sbzctj_c_a_right_azzs").mouseover(function(){
+//        $(".sbzctj_c_azzs").show();
+//        $(".sbzctj_c_ayh").hide();
+//    });
+//
+//    $(".sbzctj_d_a_a_ayhck").mouseover(function(){
+//        $(".sbzctj_d_ayhck").show();
+//        $(".sbzctj_d_azzsck").hide();
+//        $('.nian').show();
+//        $('.yue').show();
+//        $(this).children().css({
+//            color:'#00a2ff'
+//        });
+//        $(this).siblings().children().css({
+//            color:'white'
+//        });
+//    });
+//    $(".sbzctj_d_a_a_azzsck").mouseover(function(){
+//        $(".sbzctj_d_azzsck").show();
+//        $(".sbzctj_d_ayhck").hide();
+//        $('.nian').hide();
+//        $('.yue').hide();
+//        $(this).children().css({
+//            color:'#00a2ff'
+//        });
+//        $(this).siblings().children().css({
+//            color:'white'
+//        });
+//    });
+
+</script>
+
+</body>
+</html>

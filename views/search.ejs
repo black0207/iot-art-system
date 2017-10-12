@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title><%= title %></title>
+      <link rel="shortcut icon" href="/images/favicon.ico">
+      <link rel='stylesheet' href='/less/style.css' />
+
+      <script src="/assets/common/js/jquery-1.9.1.min.js" type="text/javascript" language="javascript"></script>
+      <script src="/assets/common/js/echarts.min.js" type="text/javascript" language="javascript"></script>
+      <script src="/assets/scripts/sentilo/jquery.SuperSlide.2.1.1.js" type="text/javascript" language="javascript"></script>
+      <!--加载数据开始-->
+      <script src="/assets/scripts/sentilo/mainMapPage.js" type="text/javascript" language="javascript"></script>
+      <script src="/assets/scripts/sentilo/loadData.js" type="text/javascript" language="javascript"></script>
+      <!--加载数据结束-->
+
+      <!--地图模块开始-->
+      <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=eamDDEk7gqfPzu0EWYlly7HgaV44YfLA"></script>
+      <script type="text/javascript" src="http://api.map.baidu.com/library/TextIconOverlay/1.2/src/TextIconOverlay_min.js"></script>
+      <script type="text/javascript" src="http://api.map.baidu.com/library/MarkerClusterer/1.2/src/MarkerClusterer_min.js"></script>
+      <script type="text/javascript" src="http://api.map.baidu.com/library/InfoBox/1.2/src/InfoBox_min.js"></script>
+      <script type="text/javascript" src="http://developer.baidu.com/map/custom/stylelist.js"></script>
+      <script type="text/javascript" src="http://api.map.baidu.com/library/MapWrapper/1.2/src/MapWrapper.min.js"></script>
+      <script type="text/javascript" src="/assets/scripts/gis/mapstyle.js"></script>
+
+      <!--地图模块结束-->
+
+  </head>
+  <body>
+
+    <% include common/header.ejs%>
+
+    <div class="center" >
+        <div id="map" ></div>
+
+
+
+    </div>
+    <div class="search-box">
+       <div class="search-box-inner">
+           <input placeholder="请输入关键字（类型/协议/归属部门）">
+           <button onclick="searchDevice(this)">搜索</button>
+       </div>
+        <ul id="deviceList">
+
+        </ul>
+        <script>
+
+        </script>
+    </div>
+
+  </body>
+  <script src="/assets/scripts/gis/mapload.js" type="text/javascript" language="javascript"></script>
+</html>

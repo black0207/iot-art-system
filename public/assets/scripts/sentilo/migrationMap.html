@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>深圳迁徙图</title>
+
+    <script src="/assets/common/js/jquery-1.9.1.min.js" type="text/javascript" language="javascript"></script>
+   <!--  <script src="/assets/common/js/echarts-all.js" type="text/javascript" language="javascript"></script>
+   <script src="/assets/scripts/sentilo/migrationMap.js" type="text/javascript" language="javascript"></script> -->
+    <style>
+        #canvas{ position: absolute;top:105px; right:0px;}
+        .tttst{width:214px; height:657px;  overflow: hidden; position: absolute; z-index: 9999; top:105px; right:60px;}
+        .tttst ul{width:214px; height:657px; margin:0px; padding:0px;   overflow: hidden; }
+        .tttst ul li{width:214px; height:auto; margin:0px auto 65px; padding:0px; float: left; display: inline;  overflow: hidden; }
+        #trainSlop div{ position: relative;cursor: default;}
+        .tttst_a{ text-align: left; float: left;}
+        .tttst_b{ text-align: right; float: left;}
+        .ttubt{width:1100px; height:32px; line-height:32px; text-align:center;  font-size:32px; color: #ffffff; top:0px; position: absolute; z-index: 9999; }
+        .dhk{width:340px; height:630px;  overflow: hidden; position: absolute; z-index: 9999; top:20px; right:20px; font-size:18px; color:#ffffff; }
+        .dhk ul{width:340px; height:630px; margin:0px; padding:0px;   overflow: hidden; }
+        .dhk ul li{width:340px; height:auto; margin:0px auto 20px; padding:0px; float: left; display: inline;  overflow: hidden;  }
+        .dhk ul li{ position: relative;}
+        .dhk ul li a,.dhk ul li a:hover, .dhk ul li a:active,.dhk ul li a:focus{font-size: 18px; color:#ffffff; text-decoration: none; }
+        .dhk_a{ text-align: left; float: left;}
+        .dhk_b{ text-align: right; float: right; }
+        #dhk_c{ text-align: left; float: left; margin-left:60px; margin-top:10px; }
+        #dhk_d{ text-align: left; float: left; margin-top: -30px; }
+        .dhkwz{ font-size: 18px; color:#ffffff; position: absolute; top:10px; right:15px; text-align: center; }
+        .dhkwz_a{ font-size: 18px; color:#ffffff; position: absolute; top:10px; left:15px; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <!--<div class="ttubt">福州实时数据吞吐势态图</div>-->
+    <!--<canvas id="canvas" width="274" height="657"></canvas>-->
+    <!--<div class="tttst">-->
+        <!--<ul>-->
+            <!--<li class="tttst_b"><a href="####" title=""><img src="/assets/img/sentilo/qxt_a.png"/></a></li>-->
+            <!--<li class="tttst_a"><a href="####" title=""><img src="/assets/img/sentilo/qxt_b.png"/></a></li>-->
+            <!--<li class="tttst_b"><a href="####" title=""><img src="/assets/img/sentilo/qxt_b.png"/></a></li>-->
+            <!--<li class="tttst_a"><a href="####" title=""><img src="/assets/img/sentilo/qxt_b.png"/></a></li>-->
+            <!--<li class="tttst_b"><a href="####" title=""><img src="/assets/img/sentilo/qxt_b.png"/></a></li>-->
+            <!--<li class="tttst_a"><a href="####" title=""><img src="/assets/img/sentilo/qxt_b.png"/></a></li>-->
+        <!--</ul>-->
+    <!--</div>-->
+    <!--<div class="dhk">-->
+        <!--<ul>-->
+        <!--<li class="dhk_b"><a href="####" title="">-->
+            <!--<div class="dhkwz">-->
+                <!--<div>福州市物联网云平台</div>-->
+                <!--<div>10.10.30.121</div>-->
+            <!--</div>-->
+            <!--<img src="/assets/img/sentilo/dhk_a.png"/></a>-->
+        <!--</li>-->
+        <!--<li class="dhk_a"><a href="####" title="">-->
+            <!--<div class="dhkwz_a">-->
+                <!--<div>罗源中转服务器</div>-->
+                <!--<div>10.10.30.125</div>-->
+            <!--</div>-->
+            <!--<img src="/assets/img/sentilo/dhk_b.png"/></a>-->
+        <!--</li>-->
+        <!--<li class="dhk_b"><a href="####" title="">-->
+            <!--<div class="dhkwz">-->
+                <!--<div>福州中转服务器</div>-->
+                <!--<div>10.10.30.126</div>-->
+            <!--</div>-->
+            <!--<img src="/assets/img/sentilo/dhk_b.png"/></a>-->
+        <!--</li>-->
+        <!--<li id="dhk_c"><a href="####" title="">-->
+            <!--<div class="dhkwz_a">-->
+                <!--<div>闽侯中转服务器</div>-->
+                <!--<div>10.10.30.128</div>-->
+            <!--</div>-->
+            <!--<img src="/assets/img/sentilo/dhk_c.png"/></a>-->
+        <!--</li>-->
+        <!--<li class="dhk_b"><a href="####" title="">-->
+            <!--<div class="dhkwz">-->
+                <!--<div>平潭中转服务器</div>-->
+                <!--<div>10.10.30.130</div>-->
+            <!--</div>-->
+            <!--<img src="/assets/img/sentilo/dhk_b.png"/></a>-->
+        <!--</li>-->
+        <!--<li id="dhk_d"><a href="####" title="">-->
+            <!--<div class="dhkwz_a">-->
+                <!--<div>长乐中转服务器</div>-->
+                <!--<div>10.10.30.131</div>-->
+            <!--</div>-->
+            <!--<img src="/assets/img/sentilo/dhk_b.png"/></a>-->
+        <!--</li>-->
+    <!--</ul>-->
+    <!--</div>-->
+
+
+    <!--<div style="width: 1100px;height: 875px;background-image: url('/assets/img/sentilo/fuzhouMap.jpg');z-index: 9998;position: absolute;opacity: 0.8;"></div>-->
+    <div id="trainSlop" style="background-image: url('/assets/img/sentilo/fuzhouMap.png');"></div>
+<script type="text/javascript" language="JavaScript">
+
+    $(document).ready(function(){
+        $('#trainSlop').css({
+            height:875,
+            width:'auto'
+        });
+
+//        $('.tttst_b').eq(2).css({
+//            margin:'0px auto 25px'
+//        });
+//
+//        var canvas = document.getElementById('canvas');
+//        if (canvas.getContext){
+//            var ctx = canvas.getContext('2d');
+//            ctx.strokeStyle = "rgb(166,147,124)";
+//            ctx.lineWidth = 1.0;
+//
+//            // 填充三角形
+//            ctx.beginPath();
+//            ctx.moveTo(214,25);
+//            ctx.lineTo(260,25);
+//            ctx.lineTo(260,124);
+//            ctx.lineTo(36,124);
+//            ctx.stroke();
+//            ctx.moveTo(260,124);
+//            ctx.lineTo(260,233);
+//            ctx.lineTo(214,233);
+//            ctx.stroke();
+//            ctx.moveTo(260,233);
+//            ctx.lineTo(260,343);
+//            ctx.lineTo(36,343);
+//            ctx.stroke();
+//            ctx.moveTo(260,343);
+//            ctx.lineTo(260,463);
+//            ctx.lineTo(214,463);
+//            ctx.stroke();
+//            ctx.moveTo(260,463);
+//            ctx.lineTo(260,523);
+//            ctx.lineTo(36,523);
+//            ctx.stroke();
+//
+//        }
+
+        console.log('index='+indexTime);
+        //initMigrationMap();
+    });
+
+</script>
+
+</body>
+</html>

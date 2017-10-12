@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/less/style.css' />
+    <script type="text/javascript" src="/javascripts/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/javascripts/accordionMenu.js"></script>
+    <script type="text/javascript" src="/javascripts/jqPaginator.js"></script>
+    <script type="text/javascript" src="/javascripts/assetsSearch.js"></script>
+    <script type="text/javascript" src="/assets/scripts/gis/mapload.js"></script>
+
+  </head>
+  <body>
+
+    <% include common/header.ejs%>
+
+    <div class="content">
+      <div class="sidebar">
+        <ul id="accordion" class="accordion">
+          <li>
+            <div class="link">位置</div>
+            <ul class="submenu">
+              <li><a href="#">北京</a></li>
+              <li><a href="#">南京</a></li>
+              <li><a href="#">新疆</a></li>
+              <li><a href="#">杭州</a></li>
+              <li><a href="#">嘉兴</a></li>
+              <li><a href="#">福建</a></li>
+              <li><a href="#">其他</a></li>
+            </ul>
+          </li>
+          <li>
+            <div class="link">设备类型</div>
+            <ul class="submenu">
+              <li><a href="javascript:;">光照度检测仪</a></li>
+              <li><a href="javascript:;">测速仪</a></li>
+              <li><a href="javascript:;">称重仪</a></li>
+              <li><a href="javascript:;">酸碱度PH计</a></li>
+              <li><a href="javascript:;">粉尘浓度探测器</a></li>
+              <li><a href="javascript:;">风速测量计</a></li>
+              <li><a href="javascript:;">超声波流量计</a></li>
+              <li><a href="javascript:;">气体分析仪</a></li>
+              <li><a href="javascript:;">电磁辐射</a></li>
+              <li><a href="javascript:;">湿度计</a></li>
+              <li><a href="javascript:;">气压计</a></li>
+              <li><a href="javascript:;">噪音计</a></li>
+              <li><a href="javascript:;">温度计</a></li>
+              <li><a href="javascript:;">电表</a></li>
+              <li><a href="javascript:;">水质监测仪</a></li>
+              <li><a href="javascript:;">智能水表</a></li>
+              <li><a href="javascript:;">自动气象站</a></li>
+              <li><a href="javascript:;">环境探测器</a></li>
+              <li><a href="javascript:;">其他</a></li>
+            </ul>
+          </li>
+          <li>
+            <div class="link">设备协议</div>
+            <ul class="submenu">
+              <li><a href="#">LORA</a></li>
+              <li><a href="#">ZigBee</a></li>
+              <li><a href="#">Wifi</a></li>
+              <li><a href="#">GPRS</a></li>
+              <li><a href="#">3G</a></li>
+              <li><a href="#">4G</a></li>
+              <li><a href="#">NB-IoT</a></li>
+              <li><a href="#">其他</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="device-list" id="assetsDeviceList">
+        <!--<div class="device">-->
+          <!--<img src="/images/sensor.png" alt="设备图片">-->
+          <!--<div class="profile">-->
+            <!--<table>-->
+              <!--<tr>-->
+                <!--<td class="name">名称：</td>-->
+                <!--<td class="value">设备1</td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td class="name">类型：</td>-->
+                <!--<td class="value">传感器</td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td class="name">协议：</td>-->
+                <!--<td class="value">XXXXXXXXXX</td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td class="name">状态：</td>-->
+                <!--<td class="value">XXXXXXXXXX</td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td class="name">位置：</td>-->
+                <!--<td class="value">XXXXXXXXXX</td>-->
+              <!--</tr>-->
+            <!--</table>-->
+            <!--<a href="#">查看详情</a>-->
+          <!--</div>-->
+
+        <!--</div>-->
+
+        <!--<div class="device">-->
+          <!--<img src="/images/sensor.png" alt="设备图片">-->
+          <!--<div class="profile">-->
+            <!--<table>-->
+              <!--<tr>-->
+                <!--<td class="name">名称：</td>-->
+                <!--<td class="value">设备2</td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td class="name">类型：</td>-->
+                <!--<td class="value">XXXXXXXXXX</td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td class="name">协议：</td>-->
+                <!--<td class="value">XXXXXXXXXX</td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td class="name">状态：</td>-->
+                <!--<td class="value">XXXXXXXXXX</td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td class="name">位置：</td>-->
+                <!--<td class="value">XXXXXXXXXX</td>-->
+              <!--</tr>-->
+            <!--</table>-->
+            <!--<a href="#">查看详情</a>-->
+          <!--</div>-->
+
+        <!--</div>-->
+
+        <!--<div class="device">-->
+          <!--<img src="/images/sensor.png" alt="设备图片">-->
+          <!--<div class="profile">-->
+            <!--<table>-->
+              <!--<tr>-->
+                <!--<td class="name">名称：</td>-->
+                <!--<td class="value">设备3</td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td class="name">类型：</td>-->
+                <!--<td class="value">XXXXXXXXXX</td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td class="name">协议：</td>-->
+                <!--<td class="value">XXXXXXXXXX</td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td class="name">状态：</td>-->
+                <!--<td class="value">XXXXXXXXXX</td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td class="name">位置：</td>-->
+                <!--<td class="value">XXXXXXXXXX</td>-->
+              <!--</tr>-->
+            <!--</table>-->
+            <!--<a href="#">查看详情</a>-->
+          <!--</div>-->
+
+        <!--</div>-->
+
+        <!--<div class="device">-->
+          <!--<img src="/images/sensor.png" alt="设备图片">-->
+          <!--<div class="profile">-->
+            <!--<table>-->
+              <!--<tr>-->
+                <!--<td class="name">名称：</td>-->
+                <!--<td class="value">设备4</td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td class="name">类型：</td>-->
+                <!--<td class="value">XXXXXXXXXX</td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td class="name">协议：</td>-->
+                <!--<td class="value">XXXXXXXXXX</td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td class="name">状态：</td>-->
+                <!--<td class="value">XXXXXXXXXX</td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td class="name">位置：</td>-->
+                <!--<td class="value">XXXXXXXXXX</td>-->
+              <!--</tr>-->
+            <!--</table>-->
+            <!--<a href="#">查看详情</a>-->
+          <!--</div>-->
+
+        <!--</div>-->
+
+
+        <!--<div class="page-num">-->
+          <!--<ul class="pagination" id="pagination"></ul>-->
+        <!--</div>-->
+
+        <!--<script type="text/javascript">-->
+
+            <!--$.jqPaginator('#pagination', {-->
+                <!--totalPages: 100,-->
+                <!--visiblePages: 10,-->
+                <!--currentPage: 1,-->
+                <!--prev: '<li class="prev"><a href="javascript:;">上一页</a></li>',-->
+                <!--next: '<li class="next"><a href="javascript:;">下一页</a></li>',-->
+                <!--page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',-->
+                <!--activeClass: 'active',-->
+
+            <!--});-->
+        <!--</script>-->
+      </div>
+
+      <div class="clear"></div>
+    </div>
+
+  </body>
+
+
+</html>

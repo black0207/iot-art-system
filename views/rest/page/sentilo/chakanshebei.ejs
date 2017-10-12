@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="中电科物联网开放平台"/>
+    <meta name="description" content="中电科物联网开放平台"/>
+    <title>中电科物联网开放平台-动态感知-势态分布-查看设备</title>
+    <link rel="shortcut icon" href="/assets/img/sentilo/favicon.ico">
+
+    <link href="/less/style.css" rel="stylesheet" type="text/css"/>
+    <!--让IE6、IE7、IE8支持html5和css3开始-->
+    <!--[if lt IE 9]>
+    <script src="/assets/common/js/html5.js" type="text/javascript" language="javascript"></script>
+    <script src="/assets/common/js/selectivizr.js" type="text/javascript" language="javascript"></script>
+    <script src="/assets/common/js/PIE.js" type="text/javascript" language="javascript"></script>
+    <![endif]-->
+    <!--让IE6、IE7、IE8支持html5和css3结束-->
+    <!--IE6支持png图片透明开始-->
+    <!--[if IE 6]>
+    <script src="/assets/common/js/DD_belatedPNG.js" mce_src="DD_belatedPNG.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        DD_belatedPNG.fix('a, div, ul, img, input, span');
+    </script>
+    <![endif]-->
+    <!--IE6支持png图片透明结束-->
+    <script src="/assets/common/js/jquery-1.9.1.min.js" type="text/javascript" language="javascript"></script>
+    <script src="/assets/common/js/echarts.min.js" type="text/javascript" language="javascript"></script>
+    <script src="/assets/scripts/sentilo/jquery.SuperSlide.2.1.1.js" type="text/javascript" language="javascript"></script>
+    <!--jquery-ui开始-->
+    <link href="/assets/common/jquery-ui/css/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css"/>
+    <script src="/assets/common/jquery-ui/js/jquery-ui-1.8.16.custom.min.js" type="text/javascript" language="javascript"></script>
+    <!--jquery-ui结束-->
+
+
+    <!--加载数据加载动画-->
+    <link type="text/css" href="/assets/css/sentilo/jquery.shCircleLoader.css" rel="stylesheet"/>
+    <script type="text/javascript" src="/assets/scripts/sentilo/jquery.shCircleLoader-min.js"></script>
+    <script type="text/javascript" src="/assets/scripts/sentilo/Loading.js"></script>
+    <!--加载数据加载动画结束-->
+    <!--地图模块开始-->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=eamDDEk7gqfPzu0EWYlly7HgaV44YfLA"></script>
+    <script type="text/javascript" src="http://developer.baidu.com/map/custom/stylelist.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/MapWrapper/1.2/src/MapWrapper.min.js"></script>
+    <script type="text/javascript" src="/assets/scripts/gis/mapstyle.js"></script>
+
+    
+    <!--地图模块结束-->
+    <link rel='stylesheet' href='/less/style.css' />
+</head>
+<body>
+<!--页面开始-->
+
+
+    <% include ../../../common/header.ejs%>
+
+<div class="page">
+    <div class="cksb">
+
+        <%= compoent.id %>
+
+        <div class="cksb_b">
+            <div class="cksb_b_left">
+                <img src="/assets/img/sentilo/stfb_a.png"/>
+                <div class="cksb_b_left_r">
+                    <div class="cksb_b_right_top">
+                        <dl>
+                            <dt>设备名</dt>
+                            <dd>碧城园-智能水表1</dd>
+                            <dt>所属用户</dt>
+                            <dd>水务局</dd>
+                            <dt>设备类型</dt>
+                            <dd>水表</dd>
+                            <dt>传输协议</dt>
+                            <dd>GPRS</dd>
+                        </dl>
+                    </div>
+                    <div class="cksb_b_right_bottom">
+                        <dl>
+                            <dt>设备状态</dt>
+                            <dd>在线</dd>
+                            <dt>地址</dt>
+                            <dd>中国福建省福州市晋安区光禄坊南后街之东侧167号，350001</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="cksb_b_right">
+                <div class="cksb_c_left_top">
+                    <div class="cksb_c_left_top_a">
+                        <img src="/assets/img/sentilo/stfb_b.png"/>
+                    </div>
+                    <div class="cksb_c_left_top_b">
+                        实时数据
+                    </div>
+                </div>
+                <div class="cksb_c_left_bottom">
+                    <table>
+                        <thead>
+                        <tr >
+                            <th class="cksb_c_left_bottom_a" colspan="2">1625 m³</th>
+                        </tr>
+                        <tr>
+                            <th colspan="2">水流量</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>更新时间</td>
+                            <td>2016/10/13 09:19</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="cksb_d">
+            <div class="cksb_d_left">
+                <div class="cksb_d_left_top">
+                    <div class="cksb_d_left_top_a">
+                        <img src="/assets/img/sentilo/stfb_d.png"/>
+                    </div>
+                    <div class="cksb_d_left_top_b">
+                        详细信息
+                    </div>
+                </div>
+                <div class="cksb_d_left_bottom">
+                    <table>
+                        <tr>
+                            <td>标识码</td>
+                            <td>testApp_provider.DB </td>
+                            <td>生产商</td>
+                            <td>江苏赛达</td>
+                        </tr>
+                        <tr>
+                            <td>描述</td>
+                            <td>晋安区主管网水流量检测</td>
+                            <td>供电方式</td>
+                            <td>交流电(220VAC)</td>
+                        </tr>
+                        <tr>
+                            <td>位置状态</td>
+                            <td>静态</td>
+                            <td>MAC</td>
+                            <td>EO-05-C5-27-96-32</td>
+                        </tr>
+                        <tr>
+                            <td>创建日期</td>
+                            <td>2016/10/13 09:19</td>
+                            <td>经纬度</td>
+                            <td><span class="cksb_d_left_bottom_a">119.5423°N</span><span>24.2367°E</span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="cksb_d_right">
+                <div class="cksb_d_right_top">
+                    <div class="cksb_d_right_top_a">
+                        <img src="/assets/img/sentilo/stfb_e.png"/>
+                    </div>
+                    <div class="cksb_d_right_top_b">
+                        位置
+                    </div>
+                </div>
+                <div class="cksb_d_right_bottom">
+                    <div id="map" style="width: 100%;height: 100%"  ></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+<!--页面结束-->
+    <script type="text/javascript" language="javascript">
+//        $(".sll_a").mouseover(function(){
+//            $(".sll_b").show();
+//            $(".sll_a_right>a>img").toggle();
+//        });
+//        $(".sll_a").mouseout(function(){
+//            $(".sll_b").hide();
+//            $(".sll_a_right>a>img").toggle();
+//        });
+//        $(".sll_b").mouseover(function(){
+//            $(this).show();
+//        });
+//        $(".sll_b").mouseout(function(){
+//            $(this).hide();
+//        });
+
+
+    </script>
+    </div>
+</body>
+</html>
