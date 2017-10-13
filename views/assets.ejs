@@ -4,10 +4,12 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/less/style.css' />
     <script type="text/javascript" src="/javascripts/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery.pagination.js"></script>
     <script type="text/javascript" src="/javascripts/accordionMenu.js"></script>
-    <script type="text/javascript" src="/javascripts/jqPaginator.js"></script>
+    <!--<script type="text/javascript" src="/javascripts/jqPaginator.js"></script>-->
     <script type="text/javascript" src="/javascripts/assetsSearch.js"></script>
     <script type="text/javascript" src="/assets/scripts/gis/mapload.js"></script>
+
 
   </head>
   <body>
@@ -201,24 +203,23 @@
         <!--</div>-->
 
 
-        <div class="page-num">
-          <ul class="pagination" id="pagination"></ul>
-        </div>
 
-        <script type="text/javascript">
 
-            $.jqPaginator('#pagination', {
-                pageSize: 4,
-                visiblePages: 10,
-                currentPage: 1,
-                prev: '<li class="prev"><a href="javascript:;">上一页</a></li>',
-                next: '<li class="next"><a href="javascript:;">下一页</a></li>',
-                page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',
-                activeClass: 'active',
+        <!--<script type="text/javascript">-->
 
-            });
-        </script>
+            <!--$.jqPaginator('#pagination', {-->
+                <!--pageSize: 4,-->
+                <!--visiblePages: 10,-->
+                <!--currentPage: 1,-->
+                <!--prev: '<li class="prev"><a href="javascript:;">上一页</a></li>',-->
+                <!--next: '<li class="next"><a href="javascript:;">下一页</a></li>',-->
+                <!--page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',-->
+                <!--activeClass: 'active',-->
+
+            <!--});-->
+        <!--</script>-->
       </div>
+      <div class="pagination"></div>
 
       <div class="clear"></div>
     </div>

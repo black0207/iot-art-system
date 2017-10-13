@@ -670,6 +670,7 @@ body {
   margin-right: 10px;
   background-color: #0d1927;
   height: 904px;
+  position: relative;
 }
 .assets-content .sidebar {
   margin-top: 12px;
@@ -733,7 +734,7 @@ body {
   float: left;
 }
 .assets-content .device-list {
-  height: 857px;
+  height: 760px;
   float: left;
   padding-left: 30px;
   padding-top: 16px;
@@ -828,6 +829,11 @@ body {
   color: #fff;
   font-size: 12px;
   line-height: 24px;
+}
+.assets-content .pagination {
+  position: absolute;
+  right: 10px;
+  bottom: 20px;
 }
 .assets-content .clear {
   clear: both;
