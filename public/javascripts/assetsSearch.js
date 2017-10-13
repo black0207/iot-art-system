@@ -9,7 +9,7 @@ $(document).ready(function(){
             if ($(this).parent().parent().prev().text() == '位置') {
                 $.ajax({
                     "type": "GET",
-                    "url": "componts.json",
+                    "url": "/componts.json",
                     "dataType": 'json',
                     "contentType": "application/json; charset=utf-8",
                     "success": function(response) {
@@ -30,13 +30,17 @@ $(document).ready(function(){
                                 for(var i=0; i<dt.length; i++){
                                     var type = dt[i].componentType;
                                     assetsDeviceList += '<div class="device">\n' +
-                                        '          <img src="/assets/img/sentilo/map-icons/component_detail/'+getIconIndexByType(type)+'" alt="设备图片">\n' +
+                                        '<img class="top-left-corner" src="/images/top-left-corner.png" alt="">\n' +
+                                        '        <img class="top-right-corner" src="/images/top-left-corner.png" alt="">\n' +
+                                        '        <img class="bottom-left-corner" src="/images/top-left-corner.png" alt="">\n' +
+                                        '        <img class="bottom-right-corner" src="/images/top-left-corner.png" alt="">\n'+
+                                        '<div class="device-picture"><img src="/assets/img/sentilo/map-icons/component_detail/'+getIconIndexByType(type)+'" alt="设备图片"></div>\n'+
+                                        '<div class="device-name">\n' +
+                                        '            <h3>'+dt[i].componentName+'</h3>\n' +
+                                        '            <img src="/images/hengxian.png" alt="">\n' +
+                                        '          </div>\n'+
                                         '          <div class="profile">\n' +
                                         '            <table>\n' +
-                                        '              <tr>\n' +
-                                        '                <td class="name">名称：</td>\n' +
-                                        '                <td class="value">'+dt[i].componentName+'</td>\n' +
-                                        '              </tr>\n' +
                                         '              <tr>\n' +
                                         '                <td class="name">类型：</td>\n' +
                                         '                <td class="value">'+dt[i].componentType+'</td>\n' +
@@ -54,9 +58,10 @@ $(document).ready(function(){
                                         '                <td class="value">'+dt[i].position+'</td>\n' +
                                         '              </tr>\n' +
                                         '            </table>\n' +
-                                        '            <a href="#">查看详情</a>\n' +
                                         '          </div>\n' +
-                                        '\n' +
+                                        '<div class="more">\n' +
+                                        '            <a href="#">查看详情</a>\n' +
+                                        '          </div>\n'+
                                         '        </div>';
                                 }
                                 $("#assetsDeviceList").html(assetsDeviceList);
@@ -75,7 +80,7 @@ $(document).ready(function(){
             } else if ($(this).parent().parent().prev().text() == '设备类型') {
                 $.ajax({
                     "type": "GET",
-                    "url": "componts.json",
+                    "url": "/componts.json",
                     "dataType": 'json',
                     "contentType": "application/json; charset=utf-8",
                     "success": function(response) {
@@ -152,7 +157,7 @@ $(document).ready(function(){
             } else { //'设备协议'
                 $.ajax({
                     "type": "GET",
-                    "url": "componts.json",
+                    "url": "/componts.json",
                     "dataType": 'json',
                     "contentType": "application/json; charset=utf-8",
                     "success": function(response) {
@@ -175,13 +180,17 @@ $(document).ready(function(){
                                 for(var i=0; i<dt.length; i++){
                                     var type = dt[i].componentType;
                                     assetsDeviceList += '<div class="device">\n' +
-                                        '          <img src="/assets/img/sentilo/map-icons/component_detail/'+getIconIndexByType(type)+'" alt="设备图片">\n' +
+                                        '<img class="top-left-corner" src="/images/top-left-corner.png" alt="">\n' +
+                                        '        <img class="top-right-corner" src="/images/top-left-corner.png" alt="">\n' +
+                                        '        <img class="bottom-left-corner" src="/images/top-left-corner.png" alt="">\n' +
+                                        '        <img class="bottom-right-corner" src="/images/top-left-corner.png" alt="">\n'+
+                                        '<div class="device-picture"><img src="/assets/img/sentilo/map-icons/component_detail/'+getIconIndexByType(type)+'" alt="设备图片"></div>\n'+
+                                        '<div class="device-name">\n' +
+                                        '            <h3>'+dt[i].componentName+'</h3>\n' +
+                                        '            <img src="/images/hengxian.png" alt="">\n' +
+                                        '          </div>\n'+
                                         '          <div class="profile">\n' +
                                         '            <table>\n' +
-                                        '              <tr>\n' +
-                                        '                <td class="name">名称：</td>\n' +
-                                        '                <td class="value">'+dt[i].componentName+'</td>\n' +
-                                        '              </tr>\n' +
                                         '              <tr>\n' +
                                         '                <td class="name">类型：</td>\n' +
                                         '                <td class="value">'+dt[i].componentType+'</td>\n' +
@@ -199,9 +208,10 @@ $(document).ready(function(){
                                         '                <td class="value">'+dt[i].position+'</td>\n' +
                                         '              </tr>\n' +
                                         '            </table>\n' +
-                                        '            <a href="#">查看详情</a>\n' +
                                         '          </div>\n' +
-                                        '\n' +
+                                        '<div class="more">\n' +
+                                        '            <a href="#">查看详情</a>\n' +
+                                        '          </div>\n'+
                                         '        </div>';
                                 }
                                 $("#assetsDeviceList").html(assetsDeviceList);
