@@ -14,7 +14,7 @@ $(document).ready(function(){
             itemStyle: {
                 normal: {
                     areaColor: 'rgba(0, 0, 255, 0)',
-                    borderColor: 'rgba(0, 0, 255, 0)'
+                    borderColor: 'rgba(0255, 255, 255, 0)'
                 },
                 emphasis: {
                     areaColor: 'rgba(128, 128, 128, 0)'

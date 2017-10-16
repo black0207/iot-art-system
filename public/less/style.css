@@ -559,7 +559,7 @@ body {
   text-align: center;
   letter-spacing: 2px;
   color: #fff;
-  margin: 45px auto 0px auto;
+  margin: 45px auto 0 auto;
 }
 .content #chart {
   width: 100%;
@@ -570,10 +570,10 @@ body {
 .content .map {
   height: 600px;
   width: 100%;
-  background-image: url(/images/china.png);
+  background-image: url(/images/china-111.png);
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: 770px 600px;
+  background-position: 52% 50%;
+  background-size: 790px 550px;
 }
 .ad {
   width: 1680px;
@@ -830,38 +830,44 @@ body {
   font-size: 12px;
   line-height: 24px;
 }
-.assets-content .pagination {
+.assets-content .footer {
   position: absolute;
-  right: 10px;
-  bottom: 20px;
+  right: 15px;
+  bottom: 40px;
 }
-.assets-content .clear {
-  clear: both;
-}
-.page-num {
+.assets-content .footer .pagination li {
+  display: inline-block;
+  width: 50px;
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  border: none;
 }
-.pagination li {
+.assets-content .footer .pagination li a {
+  display: inline-block;
+  color: #61c2f5;
+  border: none;
+}
+.assets-content .footer .pagination li.page a {
   display: inline-block;
   width: 30px;
   height: 30px;
   line-height: 30px;
-  text-align: center;
+  color: #61c2f5;
+  border: none;
 }
-.pagination li a {
-  color: #fff;
-}
-.pagination li.prev {
+.assets-content .footer .pagination li.prev {
   width: 100px;
 }
-.pagination li.next {
+.assets-content .footer .pagination li.next {
   width: 100px;
 }
-.pagination li.active {
-  border: 1px solid #eee;
-  background-color: #757575;
+.assets-content .footer .pagination li.active a {
+  background-color: #164e89;
+}
+.assets-content .footer .page {
+  box-shadow: none;
+}
+.assets-content .clear {
+  clear: both;
 }
 .apps-content {
   margin-left: 10px;
