@@ -76,19 +76,19 @@
 
                     <ul>
                         <li>
-                            <span>设备名</span> 碧城园-智能水表
+                            <span>设备名</span> <%= compoent.componentName %>
                         </li>
                         <li>
-                            <span>所属用户</span> 水务局
+                            <span>所属用户</span> <%= compoent.belongto %>
                         </li>
                         <li>
-                            <span>设备类型</span> 水表
+                            <span>设备类型</span> <%= compoent.componentType %>
                         </li>
                         <li>
-                            <span>传输协议</span> GPRS
+                            <span>传输协议</span> <%= compoent.transportType %>
                         </li>
                         <li>
-                            <span>设备状态</span> 在线
+                            <span>设备状态</span> <%= compoent.operationStatus %>
                         </li>
                     </ul>
 
@@ -103,37 +103,35 @@
                 <div class="cksb_b_left_bottom">
 
                     <ul>
+                        <% if( compoent.sensors) {%>
+                            <% for(var i= 0;i<compoent.sensors.length;i++){%>
+                                <li>
+                                    <span title=" <%= compoent.sensors[i].name%>">
+                                       <%= compoent.sensors[i].name%>
+                                    </span>
+                                    <span title="<%= compoent.sensors[i].value%>">
+                                        <%= compoent.sensors[i].value%>
+                                    </span>
+                                </li>
+                            <%}%>
+                        <%}else {%>
                         <li>
                             <span>
-                                水流量
+                                暂无信息
                             </span>
                             <span>
-                                1625M3
+                                暂无信息
                             </span>
                         </li>
-                        <li>
-                            <span>
-                                水流量
-                            </span>
-                            <span>
-                                1625M3
-                            </span>
-                        </li>
-                        <li>
-                            <span>
-                                水流量
-                            </span>
-                            <span>
-                                1625M3
-                            </span>
-                        </li>
+                        <%}%>
+
                     </ul>
                     <div class="cksb_b_date">
 
                         <img src="/images/icon1.png">
 
                         <span class="cksb_b_date_d">
-                            2017.9.20
+                            <%= compoent.sensors[0].recordTime%>
                         </span>
                          <span class="cksb_b_date_word">
                                 更新时间
@@ -200,11 +198,14 @@
 // 百度地图加载
 var map = new BMap.Map("map", {enableMapClick: false});    // 创建Map实例
 //map.centerAndZoom(new BMap.Point(119.317023, 26.066687), 12);  // 初始化地图,设置中心点坐标和地图级别
-var point = new BMap.Point(119.301141,26.090506);
+var lat = <%= compoent.lat%>;
+var lon = <%= compoent.lon%>;
+var point = new BMap.Point(lon,lat);
 map.centerAndZoom(point, 13);  // 初始化地图,设置中心点坐标和地图级别 中心点为石河子市
-map.addControl(new BMap.MapTypeControl({mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP]}));   //添加地图类型控件
+//map.addControl(new BMap.MapTypeControl({mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP]}));   //添加地图类型控件
 
-map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
+map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用
 
 ///地图样式
 map.setMapStyle({styleJson: styleJson});
@@ -217,9 +218,7 @@ var overViewOpen = new BMap.OverviewMapControl({isOpen: true, anchor: BMAP_ANCHO
 //map.addControl(overView);
 //map.addControl(overViewOpen); //右下角，打开
 
-//添加缩放控件
-var opts = {type: BMAP_NAVIGATION_CONTROL_ZOOM, anchor: BMAP_ANCHOR_BOTTOM_RIGHT}
-map.addControl(new BMap.NavigationControl(opts));
+
 
 var marker = new BMap.Marker(point);  // 创建标注
 map.addOverlay(marker);               // 将标注添加到地图中

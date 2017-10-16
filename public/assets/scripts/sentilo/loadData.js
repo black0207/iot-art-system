@@ -104,7 +104,7 @@ function searchDevice(obj) {
                                 var lon = $(this).attr("data-lon");
                                 map.centerAndZoom(new BMap.Point(lon,lat), 20);
                             }
-                        })
+                        });
                     }
 
             } else {

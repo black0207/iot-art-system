@@ -440,6 +440,8 @@ li {
   margin: 0 auto;
   text-align: center;
   color: #ff7200;
+  cursor: pointer;
+  overflow: hidden;
 }
 .page .cksb .cksb_b .cksb_b_right .cksb_b_left_bottom ul li span:nth-child(1) {
   margin-top: 20px;
@@ -467,7 +469,7 @@ li {
 }
 .page .cksb .cksb_b .cksb_b_right .cksb_b_left_bottom .cksb_b_date .cksb_b_date_d {
   background: #00a2d6;
-  font-size: 28px;
+  font-size: 18px;
 }
 .page .cksb .cksb_b .cksb_b_right .cksb_b_left_bottom .cksb_b_date .cksb_b_date_word {
   color: #06e260;
@@ -616,7 +618,7 @@ li {
 /*动态感知页面样式*/
 .center {
   width: 100%;
-  height: 750px;
+  height: 890px;
   text-align: center;
   bottom: 0;
 }
@@ -1142,8 +1144,8 @@ body {
 }
 .search-box {
   position: absolute;
-  top: 200px;
-  left: 60px;
+  top: 240px;
+  left: 80px;
   z-index: 100;
   opacity: 0.8;
   width: 400px;

@@ -29,7 +29,7 @@
                     "name": "PH", 
                     "typeName": null, 
                     "description": null, 
-                    "recordTime": "2016/11/14 14:05:00", 
+                        "recordTime": "2016/11/14 14:05:00",
                     "value": 7
                 }, 
                 {
@@ -322,7 +322,7 @@
             "componentType": "水质监测仪", 
             "componentName": "长乐：郑和花园监测站", 
             "componentDescription": null, 
-            "createDate": null, 
+            "createDate": "2016/11/14 14:05:00",
             "provider": null, 
             "powerMode": null, 
             "mac": null, 
