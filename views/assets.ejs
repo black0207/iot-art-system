@@ -4,10 +4,12 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/less/style.css' />
     <script type="text/javascript" src="/javascripts/jquery-3.2.1.min.js"></script>
+    <!--<script type="text/javascript" src="/javascripts/jquery.pagination.js"></script>-->
     <script type="text/javascript" src="/javascripts/accordionMenu.js"></script>
     <script type="text/javascript" src="/javascripts/jqPaginator.js"></script>
     <script type="text/javascript" src="/javascripts/assetsSearch.js"></script>
     <script type="text/javascript" src="/assets/scripts/gis/mapload.js"></script>
+
 
   </head>
   <body>
@@ -25,7 +27,7 @@
               <li><a href="#">新疆</a></li>
               <li><a href="#">杭州</a></li>
               <li><a href="#">嘉兴</a></li>
-              <li><a href="#">福建</a></li>
+              <li><a href="#">福州</a></li>
               <li><a href="#">其他</a></li>
             </ul>
           </li>
@@ -201,23 +203,24 @@
         <!--</div>-->
 
 
-        <!--&lt;!&ndash;<div class="page-num">&ndash;&gt;-->
-          <!--&lt;!&ndash;<ul class="pagination" id="pagination"></ul>&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
-        <!--&lt;!&ndash;<script type="text/javascript">&ndash;&gt;-->
 
-            <!--&lt;!&ndash;$.jqPaginator('#pagination', {&ndash;&gt;-->
-                <!--&lt;!&ndash;totalPages: 100,&ndash;&gt;-->
-                <!--&lt;!&ndash;visiblePages: 10,&ndash;&gt;-->
-                <!--&lt;!&ndash;currentPage: 1,&ndash;&gt;-->
-                <!--&lt;!&ndash;prev: '<li class="prev"><a href="javascript:;">上一页</a></li>',&ndash;&gt;-->
-                <!--&lt;!&ndash;next: '<li class="next"><a href="javascript:;">下一页</a></li>',&ndash;&gt;-->
-                <!--&lt;!&ndash;page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',&ndash;&gt;-->
-                <!--&lt;!&ndash;activeClass: 'active',&ndash;&gt;-->
+        <!--<script type="text/javascript">-->
 
-            <!--&lt;!&ndash;});&ndash;&gt;-->
-        <!--&lt;!&ndash;</script>&ndash;&gt;-->
+            <!--$.jqPaginator('#pagination', {-->
+                <!--pageSize: 4,-->
+                <!--visiblePages: 10,-->
+                <!--currentPage: 1,-->
+                <!--prev: '<li class="prev"><a href="javascript:;">上一页</a></li>',-->
+                <!--next: '<li class="next"><a href="javascript:;">下一页</a></li>',-->
+                <!--page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',-->
+                <!--activeClass: 'active',-->
+
+            <!--});-->
+        <!--</script>-->
+      </div>
+      <div class="footer">
+        <ul id="pagination" class="pagination"></ul>
       </div>
 
       <div class="clear"></div>

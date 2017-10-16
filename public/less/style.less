@@ -657,6 +657,8 @@ body {
   background-color: #151c26;
 }
 
+
+//首页样式
 .content {
   background: radial-gradient(#263387, #0d1927);
   border: 1px solid #053a66;
@@ -708,7 +710,7 @@ body {
     text-align: center;
     letter-spacing: 2px;
     color: #fff;
-    margin: 45px auto 0px auto;
+    margin: 45px auto 0 auto;
   }
   #chart {
     width: 100%;
@@ -719,10 +721,10 @@ body {
   .map {
     height: 600px;
     width: 100%;
-    background-image: url(/images/china.png);
+    background-image: url(/images/china-111.png);
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: 770px 600px;
+    background-position: 52% 50%;
+    background-size: 790px 550px;
   }
 }
 .ad {
@@ -799,93 +801,16 @@ body {
 
 }
 
-.content .app {
-  width: 800px;
-  height: 400px;
-  margin: 0 auto;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-  position: relative;
-}
-.content .app h2 {
-  color: #fff;
-  text-align: center;
-  font-size: 20px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-.content .app .img {
-  width: 800px;
-  height: 300px;
-  background-size: 800px 300px;
-  background-repeat:no-repeat;
-}
-.picture1 {
-  background: url(/images/smartagriculture.jpg);
-}
-.picture2 {
-  background: url(/images/smartcity.jpg);
-}
-.picture3 {
-  background: url(/images/smartpark.jpg);
-}
-.picture4 {
-  background: url(/images/cbec.jpg);
-}
-.picture5 {
-  background: url(/images/chemicallogistics.jpg);
-}
-.picture6 {
-  background: url(/images/citysafe.jpg);
-}
-.content .app .img .overlay {
-  width: 800px;
-  height: 300px;
-  position: absolute;
-  background-color: rgba(255,255,255,0.4);
-  color: #aaa;
-  font-size: 40px;
-  font-weight: 900;
-  text-align: center;
-  line-height: 300px;
-  top: 66px;
-  left: 0;
-  display: none;
-  -webkit-text-stroke: 1px #575757;
-}
-.content .app .img:hover .overlay {
-  display: block;
-  cursor: pointer;
-}
-.content .app p {
-  color: #fff;
-  font-size: 14px;
-  text-align: left;
-  padding-top: 10px;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  display:-webkit-box;
-  -webkit-box-orient:vertical;
-  -webkit-line-clamp: 2;
-}
-.content .app p a {
-  color: #fff;
-}
-.content .app p a:hover {
-  text-decoration: underline;
-}
+
+//资产中心内容样式
 
 .assets-content {
   border: 1px solid #053a66;
   margin-left: 10px;
   margin-right: 10px;
   background-color: #0d1927;
-  //padding-top: 12px;
-  //padding-left: 12px;
-  //padding-right: 12px;
-  //padding-bottom: 12px;
   height: 904px;
+  position: relative;
   .sidebar {
     margin-top: 12px;
     margin-right: 12px;
@@ -916,9 +841,7 @@ body {
           vertical-align: middle;
         }
       }
-      //li:last-child .link {
-      //  border-bottom: 0;
-      //}
+
       .submenu {
         display: none;
         background: #0a2751;
@@ -954,7 +877,7 @@ body {
 
   .device-list {
     //width: 1400px;
-    height: 857px;
+    height: 760px;
     float: left;
     padding-left: 30px;
     //padding-right: 30px;
@@ -1052,35 +975,188 @@ body {
     }
 
   }
+  .footer {
+    position: absolute;
+    right: 15px;
+    bottom: 40px;
+    .pagination li {
+      display: inline-block;
+      width: 50px;
+      text-align: center;
+      border: none;
+      a {
+        display: inline-block;
+        color: #61c2f5;
+        border: none;
+      }
+    }
+    .pagination li.page a {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      color: #61c2f5;
+      border: none;
+    }
+
+    .pagination li.prev {
+      width: 100px;
+    }
+    .pagination li.next {
+      width: 100px;
+    }
+    .pagination li.active a {
+      background-color: #164e89;
+    }
+    .page {
+      box-shadow: none;
+    }
+
+  }
   .clear {
     clear: both;
   }
 
 }
-.page-num {
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.pagination li {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-}
-.pagination li a {
-  color: #fff;
-}
-.pagination li.prev {
-  width: 100px;
-}
-.pagination li.next {
-  width: 100px;
-}
-.pagination li.active {
-  border: 1px solid #eee;
-  background-color: #757575;
+
+
+//应用展示页内容样式
+
+.apps-content {
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 1px solid #053a66;
+  background-color: #0d1927;
+  position: relative;
+  .app {
+    width: 840px;
+    height: 512px;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    .xiayuanquan {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    h2 {
+      display: inline-block;
+      color: #0bb3d6;
+      font-size: 24px;
+      vertical-align: middle;
+    }
+    .h-split-line {
+      height: 2px;
+      border-top: 2px solid #004a8d;
+      margin-top: 2px;
+      margin-bottom: 30px;
+    }
+    .img {
+      width: 840px;
+      height: 323px;
+      .overlay {
+        width: 840px;
+        height: 323px;
+        position: absolute;
+        background-color: rgba(255,255,255,0.4);
+        color: #aaa;
+        font-size: 40px;
+        font-weight: 900;
+        text-align: center;
+        line-height: 300px;
+        top: 77px;
+        left: 0;
+        display: none;
+        -webkit-text-stroke: 1px #575757;
+      }
+    }
+    .img:hover .overlay {
+      display: block;
+      cursor: pointer;
+    }
+    .picture1 {
+      background: url(/images/smartagriculture.jpg);
+      background-size: 840px 323px;
+      background-repeat: no-repeat;
+    }
+    .picture2 {
+      background: url(/images/smartcity.jpg);
+      background-size: 840px 323px;
+      background-repeat: no-repeat;
+    }
+    .picture3 {
+      background: url(/images/smartpark.jpg);
+      background-size: 840px 323px;
+      background-repeat: no-repeat;
+    }
+    .picture4 {
+      background: url(/images/cbec.jpg);
+      background-size: 840px 323px;
+      background-repeat: no-repeat;
+    }
+    .picture5 {
+      background: url(/images/chemicallogistics.jpg);
+      background-size: 840px 323px;
+      background-repeat: no-repeat;
+    }
+    .picture6 {
+      background: url(/images/citysafe.jpg);
+      background-size: 840px 323px;
+      background-repeat: no-repeat;
+    }
+    p {
+      color: #fff;
+      font-size: 12px;
+      line-height: 24px;
+      text-align: left;
+      padding-top: 15px;
+      padding-left: 15px;
+      padding-right: 15px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      a {
+        color: #fff;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .right-sidebar {
+    position: absolute;
+    top: 0;
+    right: 250px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 126px;
+    border-right: 2px solid #053963;
+    ul {
+      width: 126px;
+      li {
+        width: 126px;
+        height: 39px;
+
+        a {
+          display: block;
+          width: 126px;
+          height: 27px;
+          line-height: 27px;
+          border: 1px solid #004e71;
+          background-color: #01304a;
+          color: #5dbbec;
+          text-align: center;
+          font-size: 14px;
+          font-weight: bold;
+
+
+        }
+      }
+    }
+  }
 }
 /* 0927 */
 .index-main{

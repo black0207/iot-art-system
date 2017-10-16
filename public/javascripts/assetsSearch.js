@@ -2,14 +2,14 @@ $(document).ready(function(){
     $('ul.submenu li a').each(function(){
         $(this).click(function(){
             var keyWord = $(this).text();
-            alert(keyWord);
+            // alert(keyWord);
             var r = new RegExp(keyWord);
             var data = {"result": true, "components": []};
-            alert($(this).parent().parent().prev().text());
+            // alert($(this).parent().parent().prev().text());
             if ($(this).parent().parent().prev().text() == '位置') {
                 $.ajax({
                     "type": "GET",
-                    "url": "componts.json",
+                    "url": "/componts.json",
                     "dataType": 'json',
                     "contentType": "application/json; charset=utf-8",
                     "success": function(response) {
@@ -23,45 +23,64 @@ $(document).ready(function(){
                                 }
                             }
 
-                            if(data.components){
-                                var dt = data.components;
+                            var pageSize = 4;
+                            $('#pagination').jqPaginator({
+                                totalCounts: data.components.length,
+                                pageSize: 4,
+                                currentPage: 1,
+                                first: '<li class="prev"><a href="javascript:;">首页</a></li>',
+                                prev: '<li class="prev"><a href="javascript:;">上一页</a></li>',
+                                next: '<li class="next"><a href="javascript:;">下一页</a></li>',
+                                last: '<li class="prev"><a href="javascript:;">末页</a></li>',
+                                page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',
+                                activeClass: 'active',
+                                onPageChange: function (num, type) {
+                                    var dt = data.components;
+                                    var assetsDeviceList = '';
+                                    for (var i=0; i<pageSize; i++) {
+                                        var index = (num-1)*pageSize+i;
+                                        if(index<dt.length) {
+                                            var type = dt[index].componentType;
+                                            assetsDeviceList += '<div class="device">\n' +
+                                                '<img class="top-left-corner" src="/images/top-left-corner.png" alt="">\n' +
+                                                '        <img class="top-right-corner" src="/images/top-left-corner.png" alt="">\n' +
+                                                '        <img class="bottom-left-corner" src="/images/top-left-corner.png" alt="">\n' +
+                                                '        <img class="bottom-right-corner" src="/images/top-left-corner.png" alt="">\n'+
+                                                '<div class="device-picture"><img src="/assets/img/sentilo/map-icons/component_detail/'+getIconIndexByType(type)+'" alt="设备图片"></div>\n'+
+                                                '<div class="device-name">\n' +
+                                                '            <h3>'+dt[index].componentName+'</h3>\n' +
+                                                '            <img src="/images/hengxian.png" alt="">\n' +
+                                                '          </div>\n'+
+                                                '          <div class="profile">\n' +
+                                                '            <table>\n' +
+                                                '              <tr>\n' +
+                                                '                <td class="name">类型：</td>\n' +
+                                                '                <td class="value">'+dt[index].componentType+'</td>\n' +
+                                                '              </tr>\n' +
+                                                '              <tr>\n' +
+                                                '                <td class="name">协议：</td>\n' +
+                                                '                <td class="value">'+dt[index].transportType+'</td>\n' +
+                                                '              </tr>\n' +
+                                                '              <tr>\n' +
+                                                '                <td class="name">状态：</td>\n' +
+                                                '                <td class="value">'+dt[index].operationStatus+'</td>\n' +
+                                                '              </tr>\n' +
+                                                '              <tr>\n' +
+                                                '                <td class="name">位置：</td>\n' +
+                                                '                <td class="value">'+dt[index].position+'</td>\n' +
+                                                '              </tr>\n' +
+                                                '            </table>\n' +
+                                                '          </div>\n' +
+                                                '<div class="more">\n' +
+                                                '            <a href="/rest/page/sentilo/chakanshebei?id='+dt[index].id+'">查看详情</a>\n' +
+                                                '          </div>\n'+
+                                                '        </div>';
+                                        }
 
-                                var assetsDeviceList = '';
-                                for(var i=0; i<dt.length; i++){
-                                    var type = dt[i].componentType;
-                                    assetsDeviceList += '<div class="device">\n' +
-                                        '          <img src="/assets/img/sentilo/map-icons/component_detail/'+getIconIndexByType(type)+'" alt="设备图片">\n' +
-                                        '          <div class="profile">\n' +
-                                        '            <table>\n' +
-                                        '              <tr>\n' +
-                                        '                <td class="name">名称：</td>\n' +
-                                        '                <td class="value">'+dt[i].componentName+'</td>\n' +
-                                        '              </tr>\n' +
-                                        '              <tr>\n' +
-                                        '                <td class="name">类型：</td>\n' +
-                                        '                <td class="value">'+dt[i].componentType+'</td>\n' +
-                                        '              </tr>\n' +
-                                        '              <tr>\n' +
-                                        '                <td class="name">协议：</td>\n' +
-                                        '                <td class="value">'+dt[i].transportType+'</td>\n' +
-                                        '              </tr>\n' +
-                                        '              <tr>\n' +
-                                        '                <td class="name">状态：</td>\n' +
-                                        '                <td class="value">'+dt[i].operationStatus+'</td>\n' +
-                                        '              </tr>\n' +
-                                        '              <tr>\n' +
-                                        '                <td class="name">位置：</td>\n' +
-                                        '                <td class="value">'+dt[i].position+'</td>\n' +
-                                        '              </tr>\n' +
-                                        '            </table>\n' +
-                                        '            <a href="#">查看详情</a>\n' +
-                                        '          </div>\n' +
-                                        '\n' +
-                                        '        </div>';
+                                    }
+                                    $("#assetsDeviceList").html(assetsDeviceList);
                                 }
-                                $("#assetsDeviceList").html(assetsDeviceList);
-                            }
-
+                            });
                         } else {
 
                             alert('没有匹配的设备');
@@ -75,7 +94,7 @@ $(document).ready(function(){
             } else if ($(this).parent().parent().prev().text() == '设备类型') {
                 $.ajax({
                     "type": "GET",
-                    "url": "componts.json",
+                    "url": "/componts.json",
                     "dataType": 'json',
                     "contentType": "application/json; charset=utf-8",
                     "success": function(response) {
@@ -93,50 +112,63 @@ $(document).ready(function(){
                                     //console.log(i);
                                 }
                             }
+                            var pageSize = 4;
+                            $('#pagination').jqPaginator({
+                                totalCounts: data.components.length,
+                                pageSize: 4,
+                                currentPage: 1,
+                                first: '<li class="prev"><a href="javascript:;">首页</a></li>',
+                                prev: '<li class="prev"><a href="javascript:;">上一页</a></li>',
+                                next: '<li class="next"><a href="javascript:;">下一页</a></li>',
+                                last: '<li class="prev"><a href="javascript:;">末页</a></li>',
+                                page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',
+                                onPageChange: function (num, type) {
+                                    var dt = data.components;
+                                    var assetsDeviceList = '';
+                                    for (var i=0; i<pageSize; i++) {
+                                        var index = (num-1)*pageSize+i;
+                                        if(index<dt.length) {
+                                            var type = dt[index].componentType;
+                                            assetsDeviceList += '<div class="device">\n' +
+                                                '<img class="top-left-corner" src="/images/top-left-corner.png" alt="">\n' +
+                                                '        <img class="top-right-corner" src="/images/top-left-corner.png" alt="">\n' +
+                                                '        <img class="bottom-left-corner" src="/images/top-left-corner.png" alt="">\n' +
+                                                '        <img class="bottom-right-corner" src="/images/top-left-corner.png" alt="">\n'+
+                                                '<div class="device-picture"><img src="/assets/img/sentilo/map-icons/component_detail/'+getIconIndexByType(type)+'" alt="设备图片"></div>\n'+
+                                                '<div class="device-name">\n' +
+                                                '            <h3>'+dt[index].componentName+'</h3>\n' +
+                                                '            <img src="/images/hengxian.png" alt="">\n' +
+                                                '          </div>\n'+
+                                                '          <div class="profile">\n' +
+                                                '            <table>\n' +
+                                                '              <tr>\n' +
+                                                '                <td class="name">类型：</td>\n' +
+                                                '                <td class="value">'+dt[index].componentType+'</td>\n' +
+                                                '              </tr>\n' +
+                                                '              <tr>\n' +
+                                                '                <td class="name">协议：</td>\n' +
+                                                '                <td class="value">'+dt[index].transportType+'</td>\n' +
+                                                '              </tr>\n' +
+                                                '              <tr>\n' +
+                                                '                <td class="name">状态：</td>\n' +
+                                                '                <td class="value">'+dt[index].operationStatus+'</td>\n' +
+                                                '              </tr>\n' +
+                                                '              <tr>\n' +
+                                                '                <td class="name">位置：</td>\n' +
+                                                '                <td class="value">'+dt[index].position+'</td>\n' +
+                                                '              </tr>\n' +
+                                                '            </table>\n' +
+                                                '          </div>\n' +
+                                                '<div class="more">\n' +
+                                                '            <a href="/rest/page/sentilo/chakanshebei?id='+dt[index].id+'">查看详情</a>\n' +
+                                                '          </div>\n'+
+                                                '        </div>';
+                                        }
 
-                            if(data.components){
-                                var dt = data.components;
-                                var assetsDeviceList = '';
-                                for(var i=0; i<dt.length; i++){
-                                    var type = dt[i].componentType;
-                                    assetsDeviceList += '<div class="device">\n' +
-                                        '<img class="top-left-corner" src="/images/top-left-corner.png" alt="">\n' +
-                                        '        <img class="top-right-corner" src="/images/top-left-corner.png" alt="">\n' +
-                                        '        <img class="bottom-left-corner" src="/images/top-left-corner.png" alt="">\n' +
-                                        '        <img class="bottom-right-corner" src="/images/top-left-corner.png" alt="">\n'+
-                                        '<div class="device-picture"><img src="/assets/img/sentilo/map-icons/component_detail/'+getIconIndexByType(type)+'" alt="设备图片"></div>\n'+
-                                        '<div class="device-name">\n' +
-                                        '            <h3>'+dt[i].componentName+'</h3>\n' +
-                                        '            <img src="/images/hengxian.png" alt="">\n' +
-                                        '          </div>\n'+
-                                        '          <div class="profile">\n' +
-                                        '            <table>\n' +
-                                        '              <tr>\n' +
-                                        '                <td class="name">类型：</td>\n' +
-                                        '                <td class="value">'+dt[i].componentType+'</td>\n' +
-                                        '              </tr>\n' +
-                                        '              <tr>\n' +
-                                        '                <td class="name">协议：</td>\n' +
-                                        '                <td class="value">'+dt[i].transportType+'</td>\n' +
-                                        '              </tr>\n' +
-                                        '              <tr>\n' +
-                                        '                <td class="name">状态：</td>\n' +
-                                        '                <td class="value">'+dt[i].operationStatus+'</td>\n' +
-                                        '              </tr>\n' +
-                                        '              <tr>\n' +
-                                        '                <td class="name">位置：</td>\n' +
-                                        '                <td class="value">'+dt[i].position+'</td>\n' +
-                                        '              </tr>\n' +
-                                        '            </table>\n' +
-                                        '          </div>\n' +
-                                        '<div class="more">\n' +
-                                        '            <a href="#">查看详情</a>\n' +
-                                        '          </div>\n'+
-                                        '        </div>';
+                                    }
+                                    $("#assetsDeviceList").html(assetsDeviceList);
                                 }
-
-                                $("#assetsDeviceList").html(assetsDeviceList);
-                            }
+                            });
 
                         } else {
 
@@ -152,7 +184,7 @@ $(document).ready(function(){
             } else { //'设备协议'
                 $.ajax({
                     "type": "GET",
-                    "url": "componts.json",
+                    "url": "/componts.json",
                     "dataType": 'json',
                     "contentType": "application/json; charset=utf-8",
                     "success": function(response) {
@@ -169,43 +201,63 @@ $(document).ready(function(){
                                 }
                             }
 
-                            if(data.components){
-                                var dt = data.components;
-                                var assetsDeviceList = '';
-                                for(var i=0; i<dt.length; i++){
-                                    var type = dt[i].componentType;
-                                    assetsDeviceList += '<div class="device">\n' +
-                                        '          <img src="/assets/img/sentilo/map-icons/component_detail/'+getIconIndexByType(type)+'" alt="设备图片">\n' +
-                                        '          <div class="profile">\n' +
-                                        '            <table>\n' +
-                                        '              <tr>\n' +
-                                        '                <td class="name">名称：</td>\n' +
-                                        '                <td class="value">'+dt[i].componentName+'</td>\n' +
-                                        '              </tr>\n' +
-                                        '              <tr>\n' +
-                                        '                <td class="name">类型：</td>\n' +
-                                        '                <td class="value">'+dt[i].componentType+'</td>\n' +
-                                        '              </tr>\n' +
-                                        '              <tr>\n' +
-                                        '                <td class="name">协议：</td>\n' +
-                                        '                <td class="value">'+dt[i].transportType+'</td>\n' +
-                                        '              </tr>\n' +
-                                        '              <tr>\n' +
-                                        '                <td class="name">状态：</td>\n' +
-                                        '                <td class="value">'+dt[i].operationStatus+'</td>\n' +
-                                        '              </tr>\n' +
-                                        '              <tr>\n' +
-                                        '                <td class="name">位置：</td>\n' +
-                                        '                <td class="value">'+dt[i].position+'</td>\n' +
-                                        '              </tr>\n' +
-                                        '            </table>\n' +
-                                        '            <a href="#">查看详情</a>\n' +
-                                        '          </div>\n' +
-                                        '\n' +
-                                        '        </div>';
+                            var pageSize = 4;
+                            $('#pagination').jqPaginator({
+                                totalCounts: data.components.length,
+                                pageSize: 4,
+                                currentPage: 1,
+                                first: '<li class="prev"><a href="javascript:;">首页</a></li>',
+                                prev: '<li class="prev"><a href="javascript:;">上一页</a></li>',
+                                next: '<li class="next"><a href="javascript:;">下一页</a></li>',
+                                last: '<li class="prev"><a href="javascript:;">末页</a></li>',
+                                page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',
+                                onPageChange: function (num, type) {
+                                    var dt = data.components;
+                                    var assetsDeviceList = '';
+                                    for (var i=0; i<pageSize; i++) {
+                                        var index = (num-1)*pageSize+i;
+                                        if(index<dt.length) {
+                                            var type = dt[index].componentType;
+                                            assetsDeviceList += '<div class="device">\n' +
+                                                '<img class="top-left-corner" src="/images/top-left-corner.png" alt="">\n' +
+                                                '        <img class="top-right-corner" src="/images/top-left-corner.png" alt="">\n' +
+                                                '        <img class="bottom-left-corner" src="/images/top-left-corner.png" alt="">\n' +
+                                                '        <img class="bottom-right-corner" src="/images/top-left-corner.png" alt="">\n'+
+                                                '<div class="device-picture"><img src="/assets/img/sentilo/map-icons/component_detail/'+getIconIndexByType(type)+'" alt="设备图片"></div>\n'+
+                                                '<div class="device-name">\n' +
+                                                '            <h3>'+dt[index].componentName+'</h3>\n' +
+                                                '            <img src="/images/hengxian.png" alt="">\n' +
+                                                '          </div>\n'+
+                                                '          <div class="profile">\n' +
+                                                '            <table>\n' +
+                                                '              <tr>\n' +
+                                                '                <td class="name">类型：</td>\n' +
+                                                '                <td class="value">'+dt[index].componentType+'</td>\n' +
+                                                '              </tr>\n' +
+                                                '              <tr>\n' +
+                                                '                <td class="name">协议：</td>\n' +
+                                                '                <td class="value">'+dt[index].transportType+'</td>\n' +
+                                                '              </tr>\n' +
+                                                '              <tr>\n' +
+                                                '                <td class="name">状态：</td>\n' +
+                                                '                <td class="value">'+dt[index].operationStatus+'</td>\n' +
+                                                '              </tr>\n' +
+                                                '              <tr>\n' +
+                                                '                <td class="name">位置：</td>\n' +
+                                                '                <td class="value">'+dt[index].position+'</td>\n' +
+                                                '              </tr>\n' +
+                                                '            </table>\n' +
+                                                '          </div>\n' +
+                                                '<div class="more">\n' +
+                                                '            <a href="/rest/page/sentilo/chakanshebei?id='+dt[index].id+'">查看详情</a>\n' +
+                                                '          </div>\n'+
+                                                '        </div>';
+                                        }
+
+                                    }
+                                    $("#assetsDeviceList").html(assetsDeviceList);
                                 }
-                                $("#assetsDeviceList").html(assetsDeviceList);
-                            }
+                            });
 
                         } else {
 
