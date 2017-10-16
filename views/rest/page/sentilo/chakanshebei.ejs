@@ -40,6 +40,9 @@
     <!--加载数据加载动画结束-->
     <!--地图模块开始-->
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=eamDDEk7gqfPzu0EWYlly7HgaV44YfLA"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/TextIconOverlay/1.2/src/TextIconOverlay_min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/MarkerClusterer/1.2/src/MarkerClusterer_min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/InfoBox/1.2/src/InfoBox_min.js"></script>
     <script type="text/javascript" src="http://developer.baidu.com/map/custom/stylelist.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/library/MapWrapper/1.2/src/MapWrapper.min.js"></script>
     <script type="text/javascript" src="/assets/scripts/gis/mapstyle.js"></script>
@@ -58,9 +61,9 @@
     <div class="cksb">
 
        <div class="cksb_top">
-          <span>
-              <i></i>设备详情信息 <%= compoent.id %>
-          </span>
+          
+              <img src="/images/h1.png">设备详情信息 <%= compoent.id %>
+          
        </div>
 
         <div class="cksb_b">
@@ -93,31 +96,50 @@
                 </div>
             </div>
             <div class="cksb_b_right">
-                <div class="cksb_c_left_top">
-                    <div class="cksb_c_left_top_a">
-                        <img src="/assets/img/sentilo/stfb_b.png"/>
-                    </div>
-                    <div class="cksb_c_left_top_b">
-                        实时数据
-                    </div>
+                <div class="cksb_b_left_top">
+                    <img src="/assets/img/sentilo/stfb_b.png"/>
+                    实时数据
                 </div>
-                <div class="cksb_c_left_bottom">
-                    <table>
-                        <thead>
-                        <tr >
-                            <th class="cksb_c_left_bottom_a" colspan="2">1625 m³</th>
-                        </tr>
-                        <tr>
-                            <th colspan="2">水流量</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>更新时间</td>
-                            <td>2016/10/13 09:19</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                <div class="cksb_b_left_bottom">
+
+                    <ul>
+                        <li>
+                            <span>
+                                水流量
+                            </span>
+                            <span>
+                                1625M3
+                            </span>
+                        </li>
+                        <li>
+                            <span>
+                                水流量
+                            </span>
+                            <span>
+                                1625M3
+                            </span>
+                        </li>
+                        <li>
+                            <span>
+                                水流量
+                            </span>
+                            <span>
+                                1625M3
+                            </span>
+                        </li>
+                    </ul>
+                    <div class="cksb_b_date">
+
+                        <img src="/images/icon1.png">
+
+                        <span class="cksb_b_date_d">
+                            2017.9.20
+                        </span>
+                         <span class="cksb_b_date_word">
+                                更新时间
+                         </span>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -125,53 +147,34 @@
         <div class="cksb_d">
             <div class="cksb_d_left">
                 <div class="cksb_d_left_top">
-                    <div class="cksb_d_left_top_a">
-                        <img src="/assets/img/sentilo/stfb_d.png"/>
-                    </div>
-                    <div class="cksb_d_left_top_b">
-                        详细信息
-                    </div>
+                    <img src="/assets/img/sentilo/stfb_d.png"/>
+                    详细信息
+
                 </div>
                 <div class="cksb_d_left_bottom">
-                    <table>
-                        <tr>
-                            <td>标识码</td>
-                            <td>testApp_provider.DB </td>
-                            <td>生产商</td>
-                            <td>江苏赛达</td>
-                        </tr>
-                        <tr>
-                            <td>描述</td>
-                            <td>晋安区主管网水流量检测</td>
-                            <td>供电方式</td>
-                            <td>交流电(220VAC)</td>
-                        </tr>
-                        <tr>
-                            <td>位置状态</td>
-                            <td>静态</td>
-                            <td>MAC</td>
-                            <td>EO-05-C5-27-96-32</td>
-                        </tr>
-                        <tr>
-                            <td>创建日期</td>
-                            <td>2016/10/13 09:19</td>
-                            <td>经纬度</td>
-                            <td><span class="cksb_d_left_bottom_a">119.5423°N</span><span>24.2367°E</span></td>
-                        </tr>
-                    </table>
+
+                    <ul>
+                        <li><sapn class="li_left">标识码</sapn>testApp_provider.DB
+                        </li>
+                        <li><sapn class="li_left">生产商</sapn>江苏赛达
+                        </li>
+                        <li><sapn class="li_left">描述</sapn>晋安区主管网水流量检测</li>
+                        <li><sapn class="li_left">供电方式</sapn>交流电(220VAC)</li>
+                        <li><sapn class="li_left">位置状态</sapn>静态</li>
+                        <li><sapn class="li_left">MAC</sapn>EO-05-C5-27-96-32</li>
+                        <li><sapn class="li_left">创建日期</sapn>2016/10/13 09:19</li>
+                        <li><sapn class="li_left">经纬度</sapn><span class="cksb_d_left_bottom_a">119.5423°N</span><span>24.2367°E</span></li>
+                    </ul>
+
                 </div>
             </div>
             <div class="cksb_d_right">
                 <div class="cksb_d_right_top">
-                    <div class="cksb_d_right_top_a">
-                        <img src="/assets/img/sentilo/stfb_e.png"/>
-                    </div>
-                    <div class="cksb_d_right_top_b">
-                        位置
-                    </div>
+                    <img src="/assets/img/sentilo/stfb_e.png"/>
+                    位置
                 </div>
                 <div class="cksb_d_right_bottom">
-                    <div id="map" style="width: 100%;height: 100%"  ></div>
+                    <div id="map" style="width: 100%;height: 400px"  ></div>
                 </div>
             </div>
         </div>
@@ -194,6 +197,33 @@
 //            $(this).hide();
 //        });
 
+// 百度地图加载
+var map = new BMap.Map("map", {enableMapClick: false});    // 创建Map实例
+//map.centerAndZoom(new BMap.Point(119.317023, 26.066687), 12);  // 初始化地图,设置中心点坐标和地图级别
+var point = new BMap.Point(119.301141,26.090506);
+map.centerAndZoom(point, 13);  // 初始化地图,设置中心点坐标和地图级别 中心点为石河子市
+map.addControl(new BMap.MapTypeControl({mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP]}));   //添加地图类型控件
+
+map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
+///地图样式
+map.setMapStyle({styleJson: styleJson});
+//map.setMapStyle({style: 'midnight'});
+
+var overView = new BMap.OverviewMapControl();
+var overViewOpen = new BMap.OverviewMapControl({isOpen: true, anchor: BMAP_ANCHOR_BOTTOM_RIGHT});
+
+///添加默认缩略地图控件
+//map.addControl(overView);
+//map.addControl(overViewOpen); //右下角，打开
+
+//添加缩放控件
+var opts = {type: BMAP_NAVIGATION_CONTROL_ZOOM, anchor: BMAP_ANCHOR_BOTTOM_RIGHT}
+map.addControl(new BMap.NavigationControl(opts));
+
+var marker = new BMap.Marker(point);  // 创建标注
+map.addOverlay(marker);               // 将标注添加到地图中
+marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
 
     </script>
     </div>

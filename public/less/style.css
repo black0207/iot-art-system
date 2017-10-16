@@ -331,24 +331,21 @@ li {
 }
 .page .cksb .cksb_top {
   height: 70px;
-}
-.page .cksb .cksb_top span {
-  display: inline-block;
   width: 600px;
-  line-height: 38px;
-  height: 40px;
-  font-size: 28px;
+  line-height: 28px;
+  font-size: 22px;
   vertical-align: middle;
-  margin-top: 30px;
+  padding-top: 30px;
   margin-left: 60px;
   border-bottom: 2px solid #053a66 ;
 }
-.page .cksb .cksb_top span i {
-  display: inline-block;
+.page .cksb .cksb_top img {
   width: 30px;
   height: 30px;
-  background: url('../images/h1.png') center;
   margin-left: 10px;
+  margin-right: 5px;
+  vertical-align: middle;
+  border-radius: 15px;
 }
 .page .cksb .cksb_b {
   width: 100%;
@@ -380,9 +377,17 @@ li {
   margin-left: 30px;
 }
 .page .cksb .cksb_b .cksb_b_left .cksb_b_left_r ul li {
-  height: 35px;
-  font-size: 20px;
+  width: 350px;
+  line-height: 36px;
+  font-size: 18px;
   border-bottom: 1px solid #385476;
+}
+.page .cksb .cksb_b .cksb_b_left .cksb_b_left_r ul li span {
+  display: inline-block;
+  width: 100px;
+  text-align: left;
+  color: #58b3e5;
+  vertical-align: bottom;
 }
 .page .cksb .cksb_b .cksb_b_left:after {
   display: block;
@@ -396,6 +401,76 @@ li {
   margin-top: 50px;
   margin-left: 40px;
   border: 1px solid #053a66;
+  background: url('../images/bg3.png');
+}
+.page .cksb .cksb_b .cksb_b_right .cksb_b_left_top {
+  line-height: 40px;
+  height: 40px;
+  font-size: 18px;
+  background: #0d233d;
+  border-bottom: 1px solid #053a66;
+}
+.page .cksb .cksb_b .cksb_b_right .cksb_b_left_top img {
+  width: 35px;
+  height: 30px;
+  margin: 0 10px 0 10px;
+}
+.page .cksb .cksb_b .cksb_b_right .cksb_b_left_bottom {
+  height: 190px;
+  background: url('../images/bg3.png') no-repeat center;
+  background-size: cover;
+}
+.page .cksb .cksb_b .cksb_b_right .cksb_b_left_bottom ul {
+  height: 190px;
+  float: left;
+  /*border-right:1px solid #053a66;*/
+}
+.page .cksb .cksb_b .cksb_b_right .cksb_b_left_bottom ul li {
+  width: 200px;
+  height: 190px;
+  float: left;
+  border-right: 1px solid #053a66;
+}
+.page .cksb .cksb_b .cksb_b_right .cksb_b_left_bottom ul li span {
+  display: block;
+  width: 150px;
+  height: 60px;
+  font-size: 20px;
+  line-height: 60px;
+  margin: 0 auto;
+  text-align: center;
+  color: #ff7200;
+}
+.page .cksb .cksb_b .cksb_b_right .cksb_b_left_bottom ul li span:nth-child(1) {
+  margin-top: 20px;
+}
+.page .cksb .cksb_b .cksb_b_right .cksb_b_left_bottom ul li span:nth-child(2) {
+  background: #00a2d6;
+  color: #ffffff;
+}
+.page .cksb .cksb_b .cksb_b_right .cksb_b_left_bottom .cksb_b_date {
+  height: 190px;
+  width: 240px;
+  float: left;
+}
+.page .cksb .cksb_b .cksb_b_right .cksb_b_left_bottom .cksb_b_date img {
+  display: block;
+  width: 75px;
+  margin: 0 auto;
+}
+.page .cksb .cksb_b .cksb_b_right .cksb_b_left_bottom .cksb_b_date span {
+  display: block;
+  width: 200px;
+  line-height: 40px;
+  margin: 0 auto;
+  text-align: center;
+}
+.page .cksb .cksb_b .cksb_b_right .cksb_b_left_bottom .cksb_b_date .cksb_b_date_d {
+  background: #00a2d6;
+  font-size: 28px;
+}
+.page .cksb .cksb_b .cksb_b_right .cksb_b_left_bottom .cksb_b_date .cksb_b_date_word {
+  color: #06e260;
 }
 .page .cksb .cksb_d {
   height: 450px;
@@ -408,12 +483,58 @@ li {
   float: left;
   border: 1px solid #053a66;
 }
+.page .cksb .cksb_d .cksb_d_left .cksb_d_left_top {
+  line-height: 40px;
+  height: 40px;
+  font-size: 18px;
+  background: #0d233d;
+  border-bottom: 1px solid #053a66;
+}
+.page .cksb .cksb_d .cksb_d_left .cksb_d_left_top img {
+  width: 35px;
+  height: 30px;
+  margin: 0 10px 0 10px;
+}
+.page .cksb .cksb_d .cksb_d_left .cksb_d_left_bottom {
+  height: 400px;
+  background: url('../images/bg2.png') no-repeat center;
+  background-size: cover;
+}
+.page .cksb .cksb_d .cksb_d_left .cksb_d_left_bottom ul {
+  padding: 40px;
+}
+.page .cksb .cksb_d .cksb_d_left .cksb_d_left_bottom ul li {
+  width: 750px;
+  line-height: 36px;
+  font-size: 18px;
+  border-bottom: 1px solid #385476;
+}
+.page .cksb .cksb_d .cksb_d_left .cksb_d_left_bottom ul li .li_left {
+  margin-left: 30px;
+  display: inline-block;
+  width: 200px;
+  text-align: left;
+  color: #58b3e5;
+  vertical-align: bottom;
+}
 .page .cksb .cksb_d .cksb_d_right {
   width: 840px;
   height: 440px;
   margin-left: 30px;
   float: left;
   border: 1px solid #053a66;
+}
+.page .cksb .cksb_d .cksb_d_right .cksb_d_right_top {
+  line-height: 40px;
+  height: 40px;
+  font-size: 18px;
+  background: #0d233d;
+  border-bottom: 1px solid #053a66;
+}
+.page .cksb .cksb_d .cksb_d_right .cksb_d_right_top img {
+  width: 35px;
+  height: 30px;
+  margin: 0 10px 0 10px;
 }
 #jqxTree {
   top: 60px;
