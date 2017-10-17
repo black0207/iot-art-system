@@ -1,7 +1,7 @@
 ﻿// 百度地图加载
 var map = new BMap.Map("map", {enableMapClick: false});    // 创建Map实例
 //map.centerAndZoom(new BMap.Point(119.317023, 26.066687), 12);  // 初始化地图,设置中心点坐标和地图级别
-map.centerAndZoom(new BMap.Point(119.301141,26.090506), 13);  // 初始化地图,设置中心点坐标和地图级别 中心点为石河子市
+map.centerAndZoom(new BMap.Point(115.253333,39.288888), 10);  // 初始化地图,设置中心点坐标和地图级别 中心点为石河子市
 map.addControl(new BMap.MapTypeControl({mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP]}));   //添加地图类型控件
 
 map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放

@@ -47,6 +47,7 @@
     <script type="text/javascript" src="http://api.map.baidu.com/library/MapWrapper/1.2/src/MapWrapper.min.js"></script>
     <script type="text/javascript" src="/assets/scripts/gis/mapstyle.js"></script>
 
+
     
     <!--地图模块结束-->
     <link rel='stylesheet' href='/less/style.css' />
@@ -180,20 +181,63 @@
     </div>
 <!--页面结束-->
     <script type="text/javascript" language="javascript">
-//        $(".sll_a").mouseover(function(){
-//            $(".sll_b").show();
-//            $(".sll_a_right>a>img").toggle();
-//        });
-//        $(".sll_a").mouseout(function(){
-//            $(".sll_b").hide();
-//            $(".sll_a_right>a>img").toggle();
-//        });
-//        $(".sll_b").mouseover(function(){
-//            $(this).show();
-//        });
-//        $(".sll_b").mouseout(function(){
-//            $(this).hide();
-//        });
+
+/**
+ *获取icon图片路径
+ */
+function getIconIndexByType(type) {
+    switch (type) {
+        case "光照度检测仪":
+            return "0000.png";
+        case "测速仪":
+            return "0001.png";
+        case "称重仪":
+            return "0002.png";
+        case "酸碱度PH计":
+            return "0003.png";
+        case "粉尘浓度探测器":
+            return "0004.png";
+        case "风速测量计":
+            return "0005.png";
+        case "超声波流量计":
+            return "0006.png";
+        case "气体分析仪":
+            return "0007.png";
+        case "电磁辐射":
+            return "0008.png";
+        case "湿度计":
+            return "0009.png";
+        case "气压计":
+            return "0010.png";
+        case "噪音计":
+            return "0011.png";
+        case "温度计":
+            return "0012.png";
+        case "电表":
+            return "0013.png";
+        case "水质监测仪":
+            return "0014.png";
+        case "智能水表":
+            return "0015.png";
+        case "自动气象站":
+            return "0016.png";
+        case "环境探测器":
+            return "0017.png";
+        default :
+            return "0000.png"
+    }
+};
+
+
+    $(document).ready(function () {
+
+            var type1 = "<%= compoent.componentType%>";
+            var s = getIconIndexByType(type1);
+            var src = "/assets/img/sentilo/map-icons/component_detail/"+s+"";
+            $(".cksb_top img").attr("src",src);
+
+    });
+
 
 // 百度地图加载
 var map = new BMap.Map("map", {enableMapClick: false});    // 创建Map实例
