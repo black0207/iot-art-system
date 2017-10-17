@@ -12,7 +12,7 @@ router.get('/rest/page/sentilo/chakanshebe*', function(req, res, next) {
     //需要查询设备信息详情数据
     var id = req.query.id;
     console.log(id);
-    var data = JSON.parse(fs.readFileSync('componts.json','utf-8'));
+    var data = JSON.parse(fs.readFileSync('../iot-art-system/public/componts.json','utf-8'));
 
         for(var i = 0;i<data.components.length;i++ ){
             if(id == data.components[i].id){
