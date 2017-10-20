@@ -22,6 +22,7 @@ router.get('/rest/page/sentilo/chakanshebe*', function(req, res, next) {
     
         console.log(compoent);
 
+    
    res.render('rest/page/sentilo/chakanshebei', { title: '中国电科物联网开放平台',name: '态势感知',compoent: compoent} );
 });
 
