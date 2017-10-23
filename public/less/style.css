@@ -115,6 +115,7 @@ li {
   /*动态感知 点击样式*/
   /*资产中心 点击样式*/
   /*应用展示 点击样式*/
+  /*开发者社区 点击样式*/
 }
 .top .muen ul .list_i {
   display: inline-block;
@@ -203,6 +204,34 @@ li {
   margin-left: 10px;
   background: url('../images/top/top3.png') -626px -50px;
 }
+.top .muen ul .list_develop {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  float: right;
+  margin-left: 10px;
+  background: url('../images/top/dev.png') no-repeat;
+  background-size: 22px 22px;
+  position: relative;
+  top: 4px;
+  left: 3px;
+}
+.top .muen ul .list_develop_selected a {
+  color: #04ebff;
+  font-weight: bold;
+}
+.top .muen ul .list_develop_selected i {
+  position: relative;
+  top: 4px;
+  left: 3px;
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  float: right;
+  margin-left: 10px;
+  background: url('../images/top/dev_selected.png') no-repeat;
+  background-size: 22px 22px;
+}
 .top .muen ul li {
   width: auto;
   height: auto;
@@ -225,9 +254,9 @@ li {
 }
 .top .muen ul li a {
   font-size: 16px;
-  width: 200px;
+  width: 160px;
   height: 30px;
-  line-height: 30 px;
+  line-height: 30px;
   color: #fff;
   display: block;
   text-decoration: none;
@@ -790,7 +819,8 @@ body {
 .ad .clear {
   clear: both;
 }
-.assets-content {
+.assets-content,
+.develop-content {
   border: 1px solid #053a66;
   margin-left: 10px;
   margin-right: 10px;
@@ -798,7 +828,8 @@ body {
   height: 904px;
   position: relative;
 }
-.assets-content .sidebar {
+.assets-content .sidebar,
+.develop-content .sidebar {
   margin-top: 12px;
   margin-right: 12px;
   margin-left: 12px;
@@ -809,13 +840,15 @@ body {
   float: left;
   border: 1px solid #164e88;
 }
-.assets-content .sidebar .accordion {
+.assets-content .sidebar .accordion,
+.develop-content .sidebar .accordion {
   width: 90%;
   margin: 0 auto;
 }
-.assets-content .sidebar .accordion .link {
+.assets-content .sidebar .accordion .link,
+.develop-content .sidebar .accordion .link {
   cursor: pointer;
-  padding: 15px 15px 0px 0px;
+  padding: 15px 15px 0 0;
   color: #0bb3d6;
   font-size: 17px;
   font-weight: 700;
@@ -826,20 +859,24 @@ body {
   transition: all 0.4s ease;
   vertical-align: middle;
 }
-.assets-content .sidebar .accordion .link img {
+.assets-content .sidebar .accordion .link img,
+.develop-content .sidebar .accordion .link img {
   vertical-align: middle;
 }
-.assets-content .sidebar .accordion .submenu {
+.assets-content .sidebar .accordion .submenu,
+.develop-content .sidebar .accordion .submenu {
   display: none;
   background: #0a2751;
   font-size: 12px;
   height: 340px;
   overflow-y: auto;
 }
-.assets-content .sidebar .accordion .submenu li {
+.assets-content .sidebar .accordion .submenu li,
+.develop-content .sidebar .accordion .submenu li {
   border-bottom: 1px solid #284b75;
 }
-.assets-content .sidebar .accordion .submenu li a {
+.assets-content .sidebar .accordion .submenu li a,
+.develop-content .sidebar .accordion .submenu li a {
   display: block;
   text-decoration: none;
   color: #fff;
@@ -849,23 +886,27 @@ body {
   -o-transition: all 0.25s ease;
   transition: all 0.25s ease;
 }
-.assets-content .sidebar .accordion .submenu li a:hover {
+.assets-content .sidebar .accordion .submenu li a:hover,
+.develop-content .sidebar .accordion .submenu li a:hover {
   background: #0b5baf;
   color: #fff;
 }
-.assets-content .split-line {
+.assets-content .split-line,
+.develop-content .split-line {
   width: 2px;
   height: 903px;
   border-left: 1px solid #053a66;
   float: left;
 }
-.assets-content .device-list {
+.assets-content .device-list,
+.develop-content .device-list {
   height: 760px;
   float: left;
   padding-left: 30px;
   padding-top: 16px;
 }
-.assets-content .device-list .device {
+.assets-content .device-list .device,
+.develop-content .device-list .device {
   width: 1360px;
   height: 168px;
   margin-bottom: 12px;
@@ -873,32 +914,37 @@ body {
   background: linear-gradient(to right, #082450, #042f75, #0d1b2d);
   position: relative;
 }
-.assets-content .device-list .device .top-left-corner {
+.assets-content .device-list .device .top-left-corner,
+.develop-content .device-list .device .top-left-corner {
   float: left;
   margin-top: -1px;
   margin-left: -1px;
 }
-.assets-content .device-list .device .top-right-corner {
+.assets-content .device-list .device .top-right-corner,
+.develop-content .device-list .device .top-right-corner {
   transform: rotate(90deg);
   float: right;
   margin-top: -1px;
   margin-right: -1px;
 }
-.assets-content .device-list .device .bottom-left-corner {
+.assets-content .device-list .device .bottom-left-corner,
+.develop-content .device-list .device .bottom-left-corner {
   transform: rotate(-90deg);
   float: left;
   position: relative;
   left: -8px;
   top: 159px;
 }
-.assets-content .device-list .device .bottom-right-corner {
+.assets-content .device-list .device .bottom-right-corner,
+.develop-content .device-list .device .bottom-right-corner {
   transform: rotate(-180deg);
   position: relative;
   float: right;
   right: -8px;
   top: 159px;
 }
-.assets-content .device-list .device .device-picture {
+.assets-content .device-list .device .device-picture,
+.develop-content .device-list .device .device-picture {
   width: 230px;
   height: 152px;
   margin-top: 7px;
@@ -911,37 +957,43 @@ body {
   display: inline-block;
   vertical-align: middle;
 }
-.assets-content .device-list .device .device-name {
+.assets-content .device-list .device .device-name,
+.develop-content .device-list .device .device-name {
   width: 220px;
   display: inline-block;
   padding-left: 100px;
   vertical-align: middle;
 }
-.assets-content .device-list .device .device-name h3 {
+.assets-content .device-list .device .device-name h3,
+.develop-content .device-list .device .device-name h3 {
   font-size: 20px;
   color: #fff;
   letter-spacing: 2px;
 }
-.assets-content .device-list .device .profile {
+.assets-content .device-list .device .profile,
+.develop-content .device-list .device .profile {
   display: inline-block;
   padding-left: 153px;
   vertical-align: middle;
   font-size: 14px;
 }
-.assets-content .device-list .device .profile td.name {
+.assets-content .device-list .device .profile td.name,
+.develop-content .device-list .device .profile td.name {
   width: 86px;
   height: 30px;
   line-height: 30px;
   text-align: left;
   color: #61c2f5;
 }
-.assets-content .device-list .device .profile td.value {
+.assets-content .device-list .device .profile td.value,
+.develop-content .device-list .device .profile td.value {
   height: 30px;
   line-height: 30px;
   text-align: left;
   color: #fff;
 }
-.assets-content .device-list .device .more {
+.assets-content .device-list .device .more,
+.develop-content .device-list .device .more {
   position: absolute;
   right: 168px;
   bottom: 26px;
@@ -951,28 +1003,33 @@ body {
   background-color: #500a12;
   text-align: center;
 }
-.assets-content .device-list .device .more a {
+.assets-content .device-list .device .more a,
+.develop-content .device-list .device .more a {
   color: #fff;
   font-size: 12px;
   line-height: 24px;
 }
-.assets-content .footer {
+.assets-content .footer,
+.develop-content .footer {
   position: absolute;
   right: 15px;
   bottom: 40px;
 }
-.assets-content .footer .pagination li {
+.assets-content .footer .pagination li,
+.develop-content .footer .pagination li {
   display: inline-block;
   width: 50px;
   text-align: center;
   border: none;
 }
-.assets-content .footer .pagination li a {
+.assets-content .footer .pagination li a,
+.develop-content .footer .pagination li a {
   display: inline-block;
   color: #61c2f5;
   border: none;
 }
-.assets-content .footer .pagination li.page a {
+.assets-content .footer .pagination li.page a,
+.develop-content .footer .pagination li.page a {
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -980,19 +1037,24 @@ body {
   color: #61c2f5;
   border: none;
 }
-.assets-content .footer .pagination li.prev {
+.assets-content .footer .pagination li.prev,
+.develop-content .footer .pagination li.prev {
   width: 100px;
 }
-.assets-content .footer .pagination li.next {
+.assets-content .footer .pagination li.next,
+.develop-content .footer .pagination li.next {
   width: 100px;
 }
-.assets-content .footer .pagination li.active a {
+.assets-content .footer .pagination li.active a,
+.develop-content .footer .pagination li.active a {
   background-color: #164e89;
 }
-.assets-content .footer .page {
+.assets-content .footer .page,
+.develop-content .footer .page {
   box-shadow: none;
 }
-.assets-content .clear {
+.assets-content .clear,
+.develop-content .clear {
   clear: both;
 }
 .apps-content {
@@ -1071,7 +1133,7 @@ body {
   background-repeat: no-repeat;
 }
 .apps-content .app .picture4 {
-  background: url(/images/cbec.jpg);
+  background: url(/images/shineidingwei.jpg);
   background-size: 840px 323px;
   background-repeat: no-repeat;
 }
@@ -1137,7 +1199,7 @@ body {
 .index-main {
   height: 1000px;
   text-align: center;
-  margin: 0px auto;
+  margin: 0 auto;
   padding: 15px;
   overflow: hidden;
   background-color: #293444;
@@ -1228,4 +1290,13 @@ body {
   content: "";
   height: 0;
   clear: both;
+}
+.develop-content .waiting {
+  height: 760px;
+  float: left;
+  padding-left: 30px;
+  padding-top: 16px;
+  color: #fff;
+  font-size: 40px;
+  line-height: 60px;
 }

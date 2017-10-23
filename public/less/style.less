@@ -111,7 +111,6 @@ ul,li {
       margin-top:-18px;
     }
     ul{
-
       width: auto;
       height: auto;
       line-height: 28px;
@@ -188,6 +187,30 @@ ul,li {
         }
       }
 
+      /*开发者社区 点击样式*/
+      .list_develop{
+        .list_i;
+        background: url('../images/top/dev.png') no-repeat;
+        background-size: 22px 22px;
+        position: relative;
+        top: 4px;
+        left: 3px;
+      }
+      .list_develop_selected{
+        a{
+          color:#04ebff;
+          font-weight: bold;
+        }
+        i{
+          position: relative;
+          top: 4px;
+          left: 3px;
+          .list_i;
+          background: url('../images/top/dev_selected.png') no-repeat;
+          background-size: 22px 22px;
+        }
+      }
+
       li{
         width: auto;
         height: auto;
@@ -211,9 +234,9 @@ ul,li {
         }
         a{
           font-size:16px;
-          width: 200px;
+          width: 160px;
           height: 30px;
-          line-height: 30 px;
+          line-height: 30px;
           color:#fff;
           display: block;
           text-decoration: none;
@@ -808,9 +831,9 @@ body {
 }
 
 
-//资产中心内容样式
+//资产中心内容样式，交流合作侧边栏样式
 
-.assets-content {
+.assets-content, .develop-content {
   border: 1px solid #053a66;
   margin-left: 10px;
   margin-right: 10px;
@@ -832,7 +855,7 @@ body {
       margin: 0 auto;
       .link {
         cursor: pointer;
-        padding: 15px 15px 0px 0px;
+        padding: 15px 15px 0 0;
         color: #0bb3d6;
         font-size: 17px;
         font-weight: 700;
@@ -1103,7 +1126,7 @@ body {
       background-repeat: no-repeat;
     }
     .picture4 {
-      background: url(/images/cbec.jpg);
+      background: url(/images/shineidingwei.jpg);
       background-size: 840px 323px;
       background-repeat: no-repeat;
     }
@@ -1163,114 +1186,126 @@ body {
           text-align: center;
           font-size: 14px;
           font-weight: bold;
-
-
         }
       }
     }
   }
 }
-/* 0927 */
-.index-main{
+    /* 0927 */
+    .index-main{
 
-  height: 1000px;
-  text-align: center;
-  margin: 0px auto;
-  padding: 15px;
-  overflow: hidden;
-  background-color: #293444;
-}
+      height: 1000px;
+      text-align: center;
+      margin: 0 auto;
+      padding: 15px;
+      overflow: hidden;
+      background-color: #293444;
+    }
 
-.apps-main{
+    .apps-main{
 
-  height: 1000px;
-  text-align: center;
-  margin: 0px auto;
-  padding: 15px;
-  overflow: hidden;
-  background-color: #293444;
-}
-.search-box{
-  position: absolute;
-  top:240px;
-  left:80px;
-  z-index:100;
-  opacity: 0.8;
-  width: 400px;
-  max-height:520px;
-  background: #0c2a45;
-  text-align: center;
-  .search-box-inner{
-    border:1px solid #1382e6;
-    box-shadow: 0 0 10px #1382e6;
-    input{
-      width:320px;
-      /* padding-left: 5px ;*/
-      line-height: 40px;
-      font-size: 20px;
+      height: 1000px;
+      text-align: center;
+      margin: 0px auto;
+      padding: 15px;
+      overflow: hidden;
+      background-color: #293444;
+    }
+    .search-box{
+      position: absolute;
+      top:240px;
+      left:80px;
+      z-index:100;
+      opacity: 0.8;
+      width: 400px;
+      max-height:520px;
       background: #0c2a45;
-      border: transparent;
-      color: #ffffff;
-    }
-    button{
-      width: 68px;
-      line-height: 30px;
-      font-size: 20px;
-      background: #01304a;
-      border:1px solid #61c2f5;
-      color: #61c2f5;
-      margin-right: 3px;
-    }
-  }
-
-
-  #deviceList{
-    display: block;
-    margin: 10px;
-    list-style: none;
-
-    opacity:1;
-   /* border:1px solid green;*/
-    max-height: 460px;
-    overflow-x: auto;
-    text-align: center;
-    .red{
-      color: #dc191a;
-      font-weight: bold;
-    }
-    .gray{
-      color: #CBCECC;
-      font-weight: bold;
-    }
-    .clicked{
-      background: #e4e4e4;
-    }
-    li{
-      width: 360px;
-      line-height: 38px;
-      color: #00ff00;
-      display: block;
-     /* border-bottom: 1px solid #e4e4e4;*/
-      .list-l{
-        float: left;
-        padding-left: 10px;
-      }
-      .list-r{
-        float: right;
-        padding-right: 10px;
+      text-align: center;
+      .search-box-inner{
+        border:1px solid #1382e6;
+        box-shadow: 0 0 10px #1382e6;
+        input{
+          width:320px;
+          /* padding-left: 5px ;*/
+          line-height: 40px;
+          font-size: 20px;
+          background: #0c2a45;
+          border: transparent;
+          color: #ffffff;
+        }
+        button{
+          width: 68px;
+          line-height: 30px;
+          font-size: 20px;
+          background: #01304a;
+          border:1px solid #61c2f5;
+          color: #61c2f5;
+          margin-right: 3px;
+        }
       }
 
-    }
-    li:hover{
-      cursor: pointer;
-      background: #e4e4e4;
-    }
-    li:after{
-      display: block;
-      content: "";
-      height:0;
-      clear: both;
+
+      #deviceList{
+        display: block;
+        margin: 10px;
+        list-style: none;
+
+        opacity:1;
+        /* border:1px solid green;*/
+        max-height: 460px;
+        overflow-x: auto;
+        text-align: center;
+        .red{
+          color: #dc191a;
+          font-weight: bold;
+        }
+        .gray{
+          color: #CBCECC;
+          font-weight: bold;
+        }
+        .clicked{
+          background: #e4e4e4;
+        }
+        li{
+          width: 360px;
+          line-height: 38px;
+          color: #00ff00;
+          display: block;
+          /* border-bottom: 1px solid #e4e4e4;*/
+          .list-l{
+            float: left;
+            padding-left: 10px;
+          }
+          .list-r{
+            float: right;
+            padding-right: 10px;
+          }
+
+        }
+        li:hover{
+          cursor: pointer;
+          background: #e4e4e4;
+        }
+        li:after{
+          display: block;
+          content: "";
+          height:0;
+          clear: both;
+        }
+
+      }
     }
 
+
+//交流合作主内容样式
+.develop-content {
+  .waiting {
+    height: 760px;
+    float: left;
+    padding-left: 30px;
+    padding-top: 16px;
+    color: #fff;
+    font-size: 40px;
+    line-height: 60px;
   }
 }
