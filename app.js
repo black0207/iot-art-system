@@ -9,6 +9,9 @@ var index = require('./routes/index');
 var search = require('./routes/search');
 var apps = require('./routes/apps');
 var assets = require('./routes/assets');
+var develop = require('./routes/develop');
+var videos = require('./routes/videos');
+
 var users = require('./routes/users');
 
 
@@ -34,6 +37,8 @@ app.use('/index', index);
 app.use('/search', search);
 app.use('/assets', assets);
 app.use('/apps', apps);
+app.use('/develop', develop);
+app.use('/videos', videos);
 
 
 app.use('/users', users);
