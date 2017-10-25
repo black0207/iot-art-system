@@ -4,7 +4,6 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/less/style.css' />
     <script type="text/javascript" src="/javascripts/jquery-3.2.1.min.js"></script>
-    <!--<script type="text/javascript" src="/javascripts/video.min.js"></script>-->
     <style>
         video {
             position: fixed;
@@ -25,11 +24,27 @@
 </head>
 
 <body>
-<div>
-    <video controls="controls" autoplay="autoplay">
-        <source src="/video/yangqizhan.mp4" type="video/mp4"/>;
-    </video>
-</div>
+    <div>
+        <video id="myVideo" controls="controls" autoplay="autoplay">
+            <source src="/video/yangqizhan.mp4" type="video/mp4"/>;
+        </video>
+    </div>
+    <script type="text/javascript">
+        var myVideo = document.getElementById("myVideo");
+        myVideo.onended = function(){
+            if (myVideo.ended) {
+                var con = confirm("重复观看?");
+                if(con == true) {
+                    myVideo.play();
+                } else {
+                    window.opener=null;
+                    window.open('','_self');
+                    window.close();
+                }
+            }
+        };
+
+    </script>
 
 </body>
 </html>
