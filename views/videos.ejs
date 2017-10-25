@@ -32,15 +32,13 @@
     <script type="text/javascript">
         var myVideo = document.getElementById("myVideo");
         myVideo.onended = function(){
-            if (myVideo.ended) {
-                var con = confirm("重复观看?");
-                if(con == true) {
-                    myVideo.play();
-                } else {
-                    window.opener=null;
-                    window.open('','_self');
-                    window.close();
-                }
+            var con = confirm("重复观看?");
+            if ( con==true ) {
+                myVideo.play();
+            } else {
+                window.opener=null;
+                window.open('','_self');
+                window.close();
             }
         };
 
