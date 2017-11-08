@@ -1,4 +1,6 @@
 <div class="top">
+
+
     <div class="top_left">
         <div class="top_left_a">
             <a href="/" target="_blank" title="中电科物联网开放平台">
@@ -12,7 +14,11 @@
         </div>
     </div>
     <div class="muen">
-        <ul>
+        <select name="" id="language" class="language">
+            <option value="Chinese">中文</option>
+            <option value="English">English</option>
+        </select>
+        <ul class="Chinese">
             <li  <% if(name=='首页'){%>class="list_index_selected list_father" <%}else{%>class="list_father"<%}%>>
                 <a  href="/">首页 <i class="list_index"></i></a>
 
@@ -36,6 +42,31 @@
             </li>
 
         </ul>
+
+        <ul class="English">
+            <li  <% if(name=='首页'){%>class="list_index_selected list_father" <%}else{%>class="list_father"<%}%>>
+                <a  href="/">Home <i class="list_index"></i></a>
+
+            </li>
+            <li  <% if(name=='态势分布'){%>class="list_search_selected list_father" <%}else{%>class="list_father"<%}%>>
+                <a  href="/search">Search  <i class="list_search"></i></a>
+
+            </li>
+            <li <% if(name=='资产中心'){%>class="list_device_selected list_father" <%}else{%>class="list_father"<%}%>>
+                <a  href="/assets">Assets  <i class="list_device"></i></a>
+
+            </li>
+
+            <li <% if(name=='专题应用'){%>class="list_apps_selected list_father" <%}else{%>class="list_father"<%}%>>
+                <a  href="/apps">Application  <i class="list_apps"></i></a>
+
+            </li>
+            <li <% if(name=='开发者社区'){%>class="list_develop_selected list_father" <%}else{%>class="list_father"<%}%>>
+                <a  href="/develop">Community  <i class="list_develop"></i></a>
+
+            </li>
+
+        </ul>
     </div>
    <!-- <div class="top_right">
         <div class="top_right_a">
@@ -54,4 +85,44 @@
         <!--});-->
     <!--</script>-->
 </div>
+
+
+//实现页面中英文切换
+<script type="text/javascript">
+    $(document).ready(function(){
+        if (sessionStorage.getItem('lan')==null) {
+            $('.English').css('display','none');
+            $('.Chinese').css('display','');
+            sessionStorage.setItem('lan', '0');
+            $("#language").val('Chinese');
+            window.location.reload();//刷新当前页面.
+        } else {
+            if (sessionStorage.getItem('lan')=='0') {
+                $('.English').css('display','none');
+                $('.Chinese').css('display','');
+                $("#language").val('Chinese');
+            } else if (sessionStorage.getItem('lan')=='1') {
+                $('.Chinese').css('display','none');
+                $('.English').css('display','');
+                $("#language").val('English');
+            }
+        }
+        $("#language").change(function() {
+            SelectChange();
+        });
+    });
+    function SelectChange(){
+        var selectValue = $("#language").val();
+        if(selectValue=='Chinese') {
+            $('.English').css('display','none');
+            $('.Chinese').css('display','');
+            sessionStorage.setItem('lan', '0');
+        } else if (selectValue=='English') {
+            $('.Chinese').css('display','none');
+            $('.English').css('display','');
+            sessionStorage.setItem('lan', '1');
+        }
+    }
+
+</script>
 

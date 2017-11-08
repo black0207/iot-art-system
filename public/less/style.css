@@ -104,8 +104,16 @@ li {
   letter-spacing: 10px;
   margin-top: -18px;
 }
+.top .muen .language {
+  float: right;
+  display: block;
+  background-color: #1c3f6e;
+  color: #fff;
+  width: 91px;
+  height: 30px;
+}
 .top .muen ul {
-  width: auto;
+  width: 910px;
   height: auto;
   line-height: 28px;
   text-align: left;
